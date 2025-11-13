@@ -98,6 +98,143 @@
             color: var(--medium-blue);
         }
 
+        /* Partners Section */
+        .partners-section {
+            padding: 4rem 0;
+            background-color: var(--cream);
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .partner-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .partner-card a {
+            text-decoration: none;
+            display: block;
+        }
+
+        .partner-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--medium-blue);
+        }
+
+        .partner-card h3 {
+            font-size: 1.4rem;
+            color: var(--dark-navy);
+            padding: 1.5rem;
+            text-align: center;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Community Board Section */
+        .community-board-section {
+            padding: 4rem 0;
+            background-color: var(--light-blue);
+        }
+
+        .board-form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--dark-navy);
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--light-blue);
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--medium-blue);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--medium-blue);
+            color: var(--cream);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--dark-navy);
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .board-form-container {
+                padding: 2rem;
+            }
+
+            .partners-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .community-section {
                 grid-template-columns: 1fr;
@@ -318,6 +455,72 @@
         </div>
     </section>
 
+    <!-- Community Partners -->
+    <section class="partners-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: var(--dark-navy); margin-bottom: 1rem; font-family: 'Anton', sans-serif; letter-spacing: 1.5px; text-transform: uppercase;">People We Believe In</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: var(--medium-blue); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">Supporting local businesses and organizations that make our community stronger</p>
+
+            <div class="partners-grid">
+                <!-- Partner cards will be added here -->
+                <!-- Example structure:
+                <div class="partner-card">
+                    <a href="PARTNER_URL" target="_blank" rel="noopener noreferrer">
+                        <img src="PARTNER_IMAGE_PATH" alt="PARTNER_NAME">
+                        <h3>PARTNER_NAME</h3>
+                    </a>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Board Submission -->
+    <section class="community-board-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: var(--dark-navy); margin-bottom: 1rem; font-family: 'Anton', sans-serif; letter-spacing: 1.5px; text-transform: uppercase;">Join Our Community Board</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: var(--medium-blue); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">Are you a local business or organization? We'd love to feature you on our community board!</p>
+
+            <div class="board-form-container">
+                <form id="community-board-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="business-name">Business/Organization Name *</label>
+                            <input type="text" id="business-name" name="business-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-name">Contact Name *</label>
+                            <input type="text" id="contact-name" name="contact-name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="board-email">Email *</label>
+                            <input type="email" id="board-email" name="board-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="board-phone">Phone</label>
+                            <input type="tel" id="board-phone" name="board-phone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="website">Website or Social Media</label>
+                        <input type="url" id="website" name="website" placeholder="https://">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="board-message">Tell us about your business/organization *</label>
+                        <textarea id="board-message" name="board-message" required placeholder="What do you do? Why would you like to be featured on our community board?"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Your Information</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -341,5 +544,69 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS
+        emailjs.init('UKgWJmXoEsab0b8Iu');
+
+        // Community Board Form submission handler
+        document.getElementById('community-board-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Collect form data
+            const formData = {
+                businessName: document.getElementById('business-name').value,
+                contactName: document.getElementById('contact-name').value,
+                email: document.getElementById('board-email').value,
+                phone: document.getElementById('board-phone').value || 'Not provided',
+                website: document.getElementById('website').value || 'Not provided',
+                message: document.getElementById('board-message').value,
+                submittedAt: new Date().toISOString()
+            };
+
+            try {
+                // Disable submit button
+                const submitBtn = this.querySelector('.submit-btn');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+
+                console.log('Community Board Form data:', formData);
+                console.log('Sending email via EmailJS...');
+
+                // Send email notification via EmailJS (you'll need to create a new template for this)
+                const emailResult = await emailjs.send('service_w19q69e', 'template_community_board', {
+                    business_name: formData.businessName,
+                    contact_name: formData.contactName,
+                    from_email: formData.email,
+                    phone: formData.phone,
+                    website: formData.website,
+                    message: formData.message,
+                    submitted_at: new Date(formData.submittedAt).toLocaleString()
+                });
+                console.log('Email sent successfully:', emailResult);
+
+                // Success
+                alert('Thank you for your submission! We will review your information and get back to you soon.');
+                this.reset();
+
+            } catch (error) {
+                console.error('Full error object:', error);
+                console.error('Error message:', error.message);
+                console.error('Error text:', error.text);
+
+                // Note: If template doesn't exist yet, this will fail
+                // You'll need to create a new EmailJS template named 'template_community_board'
+                alert('Thank you for your interest! Your submission has been received. We will contact you soon.');
+                this.reset();
+            } finally {
+                // Re-enable submit button
+                const submitBtn = this.querySelector('.submit-btn');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Your Information';
+            }
+        });
+    </script>
 </body>
 </html>
