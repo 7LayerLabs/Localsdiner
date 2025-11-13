@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Locals Diner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <style>
+        .menu-hero {
+            background: linear-gradient(135deg, var(--dark-navy) 0%, var(--medium-blue) 100%);
+            color: var(--cream);
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .menu-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .menu-hero p {
+            font-size: 1.3rem;
+        }
+
+        .menu-content {
+            padding: 4rem 0;
+            background-color: var(--cream);
+        }
+
+        .menu-section {
+            margin-bottom: 5rem;
+            scroll-margin-top: 180px;
+        }
+
+        .menu-section h2 {
+            font-size: 2.5rem;
+            color: var(--dark-navy);
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 0.75rem;
+            background-color: var(--medium-blue);
+            color: var(--cream);
+            border-radius: 10px;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .menu-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.2rem;
+            color: var(--blue-gray);
+            line-height: 1.8;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .menu-item h4 {
+            font-size: 1.3rem;
+            color: var(--dark-navy);
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .menu-item p {
+            color: var(--medium-blue);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .menu-category {
+            margin-bottom: 3rem;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            color: var(--dark-navy);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--teal);
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .category-note {
+            font-style: italic;
+            color: var(--medium-blue);
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .back-to-top {
+            text-align: center;
+            margin: 3rem 0 2rem;
+        }
+
+        .back-to-top a {
+            color: var(--medium-blue);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--medium-blue);
+            border-radius: 5px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .back-to-top a:hover {
+            background-color: var(--medium-blue);
+            color: var(--cream);
+            transform: translateY(-2px);
+        }
+
+        .special-note {
+            background-color: var(--light-blue);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .special-note h3 {
+            font-size: 2rem;
+            color: var(--dark-navy);
+            margin-bottom: 1rem;
+        }
+
+        .special-note p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Online Ordering Tab */
+        .online-ordering-tab {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, var(--teal) 0%, #007A9A 100%);
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 142, 179, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .online-ordering-tab a {
+            color: var(--cream);
+            text-decoration: none;
+            display: block;
+        }
+
+        .online-ordering-tab::before {
+            content: 'COMING SOON';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%);
+            color: white;
+            font-size: 0.55rem;
+            padding: 3px 6px;
+            border-radius: 10px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+            z-index: 1;
+            box-shadow: 0 2px 8px rgba(255, 82, 82, 0.5);
+            letter-spacing: 0.5px;
+        }
+
+        .online-ordering-tab:hover {
+            background: linear-gradient(135deg, #00A5D1 0%, var(--teal) 100%);
+            transform: translateY(-50%) translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 142, 179, 0.5);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+
+        /* Mobile Responsive - Menu */
+        @media (max-width: 768px) {
+            .menu-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .menu-hero p {
+                font-size: 1.1rem;
+            }
+
+            .menu-category h2 {
+                font-size: 2rem;
+                padding: 0.8rem;
+            }
+
+            .menu-item {
+                padding: 1rem;
+            }
+
+            .menu-item h3 {
+                font-size: 1.2rem;
+            }
+
+            .menu-item .price {
+                font-size: 1.1rem;
+            }
+
+            .menu-item p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-hero h1 {
+                font-size: 2rem;
+            }
+
+            .menu-hero p {
+                font-size: 1rem;
+            }
+
+            .menu-category h2 {
+                font-size: 1.6rem;
+                padding: 0.6rem;
+            }
+
+            .menu-item {
+                padding: 0.8rem;
+            }
+
+            .menu-item h3 {
+                font-size: 1.1rem;
+            }
+
+            .menu-item .price {
+                font-size: 1rem;
+            }
+
+            .menu-item p {
+                font-size: 0.9rem;
+            }
+        }
+        @media (max-width: 1200px) {
+            .online-ordering-tab {
+                display: none;
+            }
+        }
+
+        /* Facebook Icon */
+        .facebook-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+
+        .facebook-icon a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .facebook-icon img {
+            height: 45px;
+            width: auto;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .facebook-icon:hover img {
+            transform: scale(1.15);
+            filter: brightness(1.2);
+        }
+
+
+        /* Mobile Responsive - Menu */
+        @media (max-width: 768px) {
+            .menu-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .menu-hero p {
+                font-size: 1.1rem;
+            }
+
+            .menu-category h2 {
+                font-size: 2rem;
+                padding: 0.8rem;
+            }
+
+            .menu-item {
+                padding: 1rem;
+            }
+
+            .menu-item h3 {
+                font-size: 1.2rem;
+            }
+
+            .menu-item .price {
+                font-size: 1.1rem;
+            }
+
+            .menu-item p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-hero h1 {
+                font-size: 2rem;
+            }
+
+            .menu-hero p {
+                font-size: 1rem;
+            }
+
+            .menu-category h2 {
+                font-size: 1.6rem;
+                padding: 0.6rem;
+            }
+
+            .menu-item {
+                padding: 0.8rem;
+            }
+
+            .menu-item h3 {
+                font-size: 1.1rem;
+            }
+
+            .menu-item .price {
+                font-size: 1rem;
+            }
+
+            .menu-item p {
+                font-size: 0.9rem;
+            }
+        }
+        @media (max-width: 1200px) {
+            .facebook-icon {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (Banner + Navigation) -->
+    <nav class="navbar">
+        <div class="facebook-icon">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/branding/Facebook-Logo-social-media-emblem-transparent-PNG-image.png" alt="Facebook">
+            </a>
+        </div>
+        <div class="nav-container">
+            <ul class="nav-left">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+            <div class="banner-logo">
+                <a href="index.html">
+                    <img src="images/branding/Banner-sign.png" alt="Locals Diner">
+                </a>
+            </div>
+            <ul class="nav-right">
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="hiring.html">Now Hiring</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <button class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="online-ordering-tab">
+            <a href="#">Online Ordering</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="menu-hero" id="menu-top">
+        <h1>Our Menu</h1>
+        <p>Homemade comfort food with generous portions and great prices</p>
+    </section>
+
+    <!-- Menu Navigation -->
+    <div style="background-color: var(--medium-blue); padding: 1.5rem 0; position: sticky; top: 125px; z-index: 100;">
+        <div class="container">
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <a href="#breakfast" style="color: var(--cream); text-decoration: none; font-weight: bold; padding: 0.5rem 1rem; border: 2px solid var(--cream); border-radius: 5px; transition: all 0.3s;">Breakfast</a>
+                <a href="#lunch" style="color: var(--cream); text-decoration: none; font-weight: bold; padding: 0.5rem 1rem; border: 2px solid var(--cream); border-radius: 5px; transition: all 0.3s;">Lunch</a>
+                <a href="#beverages" style="color: var(--cream); text-decoration: none; font-weight: bold; padding: 0.5rem 1rem; border: 2px solid var(--cream); border-radius: 5px; transition: all 0.3s;">Beverages</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu Content -->
+    <div class="menu-content">
+        <div class="container">
+
+            <!-- Breakfast Section -->
+            <div id="breakfast" class="menu-section">
+                <h2>Breakfast Menu</h2>
+                <p class="menu-intro">Served Wednesday - Sunday, 7:30 AM - 2:30 PM</p>
+
+                <!-- Breakfast Favorites -->
+                <div class="menu-category">
+                    <h3 class="category-title">Breakfast Favorites</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h4>The Original Belly Buster</h4>
+                            <p>Three eggs with bacon & sausage, home fries, toast, and choice of pancakes or French toast</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>The Southerner</h4>
+                            <p>Three eggs with choice of sausage or patties, home fries, and a buttermilk biscuit</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Country Breakfast</h4>
+                            <p>Three eggs served with bacon, country ham, sausage, home fries, and toast</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Chicken & Biscuits</h4>
+                            <p>Pan-fried chicken over a grilled biscuit with sausage gravy, two eggs, and home fries</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Steak Tips & Eggs</h4>
+                            <p>Marinated steak tips with home fries and toast</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Classics -->
+                <div class="menu-category">
+                    <h3 class="category-title">The Classics</h3>
+                    <p class="category-note">Two eggs any style with toast (home fries or beans optional)</p>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h4>With Bacon or Sausage</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>With Kielbasa or Country Ham</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>With Corned Beef Hash</h4>
+                        </div>
+                    </div>
+                    <p class="category-note">Add extra egg or substitute egg whites/eggbeaters</p>
+                </div>
+
+                <!-- Breakfast Sandwiches -->
+                <div class="menu-category">
+                    <h3 class="category-title">Breakfast Sandwiches</h3>
+                    <p class="category-note">Add home fries to any sandwich</p>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h4>Egg & Cheese</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Meat, Egg & Cheese</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Western Sandwich</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Croissant Sandwich</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>B.L.T.</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Breakfast B.L.T.</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>The "Mill City" Sandwich</h4>
+                            <p>Two eggs with cheese & bacon, ham, or sausage</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Breakfast Burrito</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Omelettes -->
+                <div class="menu-category">
+                    <h3 class="category-title">Omelettes</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h4>Cheese Omelet</h4>
+                            <p>American, cheddar jack, mozzarella, feta, or Swiss</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Classic Ham & Cheese Omelet</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Sausage & Cheese Omelet</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Corned Beef Hash & Cheese Omelet</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Kielbasa & Cheese Omelet</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Meat Lovers Omelet</h4>
+                            <p>Ham, sausage, kielbasa, bacon</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Mushroom & Cheese Omelet</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Broccoli & Cheese Omelet</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Veggie Omelet</h4>
+                            <p>Mushrooms, onions, spinach, tomatoes, broccoli</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>The Chef's Special Omelet</h4>
+                            <p>All meats & vegetables with cheese</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Steak Bomb Omelet</h4>
+                            <p>Peppers, onions, mushrooms, cheese</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Greek Omelet</h4>
+                            <p>Spinach, tomatoes, feta</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Cheeseburger Scrambler</h4>
+                            <p>Four eggs scrambled with hamburger, peppers, onions, mushrooms & cheddar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benedicts -->
+                <div class="menu-category">
+                    <h3 class="category-title">Benedicts</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h4>Egg Benny</h4>
+                            <p>Two poached eggs, bacon/sausage/ham on toasted English with hollandaise</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Irish Benny</h4>
+                            <p>Two poached eggs with corned beef hash</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Eggs Florentine</h4>
+                            <p>Two poached eggs with spinach on English muffin with hollandaise</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Steak Tip Benny</h4>
+                            <p>Two poached eggs on steak tips with hollandaise</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Country Benny</h4>
+                            <p>Two poached eggs on grilled biscuit with sausage patties & sausage gravy</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Benny Omelet</h4>
+                            <p>Four eggs with diced ham or bacon layered with hollandaise</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pancakes -->
+                <div class="menu-category">
+                    <h3 class="category-title">Pancakes</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h4>Buttermilk Pancakes</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Reese's Peanut Butter Buttermilk Pancakes</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>The "Elvis"</h4>
+                            <p>Peanut butter chips & bananas with peanut butter drizzle</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Blueberry Explosion Pancakes</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Banana Nut Pancakes</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- French Toast -->
+                <div class="menu-category">
+                    <h3 class="category-title">French Toast</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h4>Jumbo French Toast</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Cap'n Crunch French Toast</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Cinnamon French Toast</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Raisin French Toast</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Coffee Roll French Toast</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>French Toast Sandwich</h4>
+                            <p>Two eggs and cheese between two slices of Texas toast with home fries</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Waffles -->
+                <div class="menu-category">
+                    <h3 class="category-title">Homemade Waffles</h3>
+                    <p class="category-note">Add strawberries, blueberries, apples, or bananas</p>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h4>Belgian Waffle</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Chocolate Chip Waffle</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Banana & Waffles</h4>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Fried Chicken on Top of Waffles</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Breakfast Sides -->
+                <div class="menu-category">
+                    <h3 class="category-title">Sides</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item"><h4>Bacon</h4></div>
+                        <div class="menu-item"><h4>Sausage Links or Patties</h4></div>
+                        <div class="menu-item"><h4>Corned Beef Hash</h4></div>
+                        <div class="menu-item"><h4>Country Ham or Kielbasa</h4></div>
+                        <div class="menu-item"><h4>Bagel with Cream Cheese</h4></div>
+                        <div class="menu-item"><h4>Side of Toast</h4></div>
+                        <div class="menu-item"><h4>Sourdough Toast</h4></div>
+                        <div class="menu-item"><h4>Hollandaise Sauce</h4></div>
+                        <div class="menu-item"><h4>Beans</h4></div>
+                        <div class="menu-item"><h4>Grilled Coffee Roll</h4></div>
+                        <div class="menu-item"><h4>Home Fries</h4></div>
+                        <div class="menu-item"><h4>Assorted Muffins</h4></div>
+                        <div class="menu-item"><h4>Two Biscuits & Sausage Gravy</h4></div>
+                        <div class="menu-item"><h4>Oatmeal</h4></div>
+                        <div class="menu-item"><h4>Real Maple Syrup</h4></div>
+                        <div class="menu-item"><h4>Extra Egg with Order</h4></div>
+                    </div>
+                </div>
+
+                <div class="back-to-top"><a href="#menu-top">↑ Back to Top</a></div>
+            </div>
+
+            <!-- Lunch Section -->
+            <div id="lunch" class="menu-section">
+                <h2>Lunch Menu</h2>
+                <p class="menu-intro">Served 11:30 AM - 2:00 PM Wednesday - Saturday</p>
+
+                <!-- Soups & Salads -->
+                <div class="menu-category">
+                    <h3 class="category-title">Soups & Salads</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item"><h4>Soup of the Day</h4></div>
+                        <div class="menu-item"><h4>Chowder of the Day</h4></div>
+                        <div class="menu-item"><h4>House Garden Salad</h4></div>
+                        <div class="menu-item"><h4>Greek Salad</h4></div>
+                        <div class="menu-item"><h4>Chef Julienne Salad</h4></div>
+                    </div>
+                    <p class="category-note">Salad Add-Ons: Grilled Chicken, Buffalo Chicken, Chicken Salad, Tuna Salad</p>
+                </div>
+
+                <!-- Starters -->
+                <div class="menu-category">
+                    <h3 class="category-title">Starters</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item"><h4>Fried Mozzarella Sticks</h4></div>
+                        <div class="menu-item"><h4>Housemade Chicken Fingers</h4></div>
+                        <div class="menu-item"><h4>Buffalo Chicken Fingers</h4></div>
+                        <div class="menu-item"><h4>Housemade Onion Rings</h4></div>
+                        <div class="menu-item"><h4>Bacon Cheddar Fries</h4></div>
+                        <div class="menu-item">
+                            <h4>Sampler Platter</h4>
+                            <p>Choice of any 3 items</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deli Sandwiches -->
+                <div class="menu-category">
+                    <h3 class="category-title">Deli Sandwiches</h3>
+                    <p class="category-note">All sandwiches served with choice of French fries or chips</p>
+                    <div class="menu-grid">
+                        <div class="menu-item"><h4>B.L.T.</h4></div>
+                        <div class="menu-item"><h4>Thick Sliced Turkey Breast</h4></div>
+                        <div class="menu-item"><h4>Tuna Salad</h4></div>
+                        <div class="menu-item"><h4>Chicken Salad</h4></div>
+                        <div class="menu-item"><h4>Tuna Melt</h4></div>
+                    </div>
+                </div>
+
+                <!-- Hot Sandwiches -->
+                <div class="menu-category">
+                    <h3 class="category-title">Hot Sandwiches</h3>
+                    <p class="category-note">All sandwiches served with choice of French fries or chips</p>
+                    <div class="menu-grid">
+                        <div class="menu-item"><h4>Haddock Sandwich</h4></div>
+                        <div class="menu-item"><h4>Fried Chicken Sandwich</h4></div>
+                        <div class="menu-item"><h4>Grilled Chicken Sandwich</h4></div>
+                        <div class="menu-item"><h4>Chicken Parmesan Sandwich</h4></div>
+                        <div class="menu-item"><h4>Buffalo Chicken Sandwich</h4></div>
+                        <div class="menu-item"><h4>Chicken Bacon Ranch Wrap</h4></div>
+                        <div class="menu-item"><h4>Steak Bomb Wrap</h4></div>
+                    </div>
+                </div>
+
+                <!-- Hand-Made Burgers -->
+                <div class="menu-category">
+                    <h3 class="category-title">Hand-Made Burgers</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item"><h4>Cheeseburger</h4></div>
+                        <div class="menu-item"><h4>Hamburger</h4></div>
+                        <div class="menu-item"><h4>Bacon Cheddar Burger</h4></div>
+                        <div class="menu-item"><h4>Mushroom Swiss Burger</h4></div>
+                        <div class="menu-item"><h4>BBQ Bacon Cheddar Burger</h4></div>
+                        <div class="menu-item">
+                            <h4>Rise & Shine Burger</h4>
+                            <p>Topped with one egg, bacon & cheese</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Boom Boom Burger</h4>
+                            <p>Bacon cheddar burger with a sweet & spicy sauce</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Traditional Favorites -->
+                <div class="menu-category">
+                    <h3 class="category-title">Traditional Favorites</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h4>Marinated Steak Tips</h4>
+                            <p>Served with peppers & onions</p>
+                        </div>
+                        <div class="menu-item"><h4>Chicken Finger Plate</h4></div>
+                        <div class="menu-item"><h4>Hamburger Plate with Gravy</h4></div>
+                        <div class="menu-item"><h4>Shepard's Pie</h4></div>
+                        <div class="menu-item"><h4>Housemade Meatloaf with Gravy</h4></div>
+                        <div class="menu-item"><h4>Stuffed Turkey Dinner</h4></div>
+                        <div class="menu-item"><h4>Boneless Fried Chicken Breast with Gravy</h4></div>
+                        <div class="menu-item"><h4>Pot Roast with Gravy</h4></div>
+                        <div class="menu-item"><h4>2 Hot Dogs with Bowl of Beans</h4></div>
+                        <div class="menu-item"><h4>Liver & Onions</h4></div>
+                        <div class="menu-item">
+                            <h4>Chicken Parmesan</h4>
+                            <p>Served with choice of pasta</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>American Chopped Suey</h4>
+                            <p>Served with choice of pasta</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fresh Seafood -->
+                <div class="menu-category">
+                    <h3 class="category-title">Fresh Seafood</h3>
+                    <p class="category-note">All served with choice of potato or vegetable</p>
+                    <div class="menu-grid">
+                        <div class="menu-item"><h4>Fried Haddock</h4></div>
+                        <div class="menu-item"><h4>Baked Haddock</h4></div>
+                        <div class="menu-item"><h4>Jumbo Shrimp</h4></div>
+                    </div>
+                </div>
+
+                <div class="back-to-top"><a href="#menu-top">↑ Back to Top</a></div>
+            </div>
+
+            <!-- Beverages Section -->
+            <div id="beverages" class="menu-section">
+                <h2>Beverages</h2>
+                <div class="menu-category">
+                    <div class="menu-grid">
+                        <div class="menu-item"><h4>Coffee or Tea</h4></div>
+                        <div class="menu-item"><h4>Iced Tea or Iced Coffee</h4></div>
+                        <div class="menu-item"><h4>Fountain Soda</h4></div>
+                        <div class="menu-item"><h4>Milk</h4></div>
+                        <div class="menu-item"><h4>Chocolate Milk</h4></div>
+                        <div class="menu-item">
+                            <h4>Juices</h4>
+                            <p>Apple, Orange, Tomato, V8, Cranberry</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="back-to-top"><a href="#menu-top">↑ Back to Top</a></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-left">
+                    <p>1420 Lakeview Ave<br>Dracut, MA 01826</p>
+                    <p><a href="tel:9789570065">(978) 957-0065</a></p>
+                </div>
+                <div class="footer-section footer-center">
+                    <img src="images/branding/logo_alt2.png" alt="Locals Diner">
+                </div>
+                <div class="footer-section footer-right">
+                    <h4>Services</h4>
+                    <p>Dine-In<br>In-Store Pickup<br>Call Ahead<br>Online Ordering Coming Soon</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Locals Diner. All rights reserved. | Established in 2024</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Locals Diner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, var(--dark-navy) 0%, var(--medium-blue) 100%);
+            color: var(--cream);
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .about-hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            padding: 4rem 0;
+        }
+
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            align-items: center;
+        }
+
+        .about-section img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--dark-navy);
+            margin-bottom: 1.5rem;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .about-text p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: var(--blue-gray);
+        }
+
+        .values-section {
+            background-color: var(--light-blue);
+            padding: 4rem 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background-color: var(--cream);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .value-card h3 {
+            font-size: 1.8rem;
+            color: var(--dark-navy);
+            margin-bottom: 1rem;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .value-card p {
+            line-height: 1.8;
+            color: var(--medium-blue);
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Online Ordering Tab */
+        .online-ordering-tab {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, var(--teal) 0%, #007A9A 100%);
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 142, 179, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .online-ordering-tab a {
+            color: var(--cream);
+            text-decoration: none;
+            display: block;
+        }
+
+        .online-ordering-tab::before {
+            content: 'COMING SOON';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%);
+            color: white;
+            font-size: 0.55rem;
+            padding: 3px 6px;
+            border-radius: 10px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+            z-index: 1;
+            box-shadow: 0 2px 8px rgba(255, 82, 82, 0.5);
+            letter-spacing: 0.5px;
+        }
+
+        .online-ordering-tab:hover {
+            background: linear-gradient(135deg, #00A5D1 0%, var(--teal) 100%);
+            transform: translateY(-50%) translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 142, 179, 0.5);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .online-ordering-tab {
+                display: none;
+            }
+        }
+
+        /* Facebook Icon */
+        .facebook-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+
+        .facebook-icon a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .facebook-icon img {
+            height: 45px;
+            width: auto;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .facebook-icon:hover img {
+            transform: scale(1.15);
+            filter: brightness(1.2);
+        }
+
+        @media (max-width: 1200px) {
+            .facebook-icon {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (Banner + Navigation) -->
+    <nav class="navbar">
+        <div class="facebook-icon">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/branding/Facebook-Logo-social-media-emblem-transparent-PNG-image.png" alt="Facebook">
+            </a>
+        </div>
+        <div class="nav-container">
+            <ul class="nav-left">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+            <div class="banner-logo">
+                <a href="index.html">
+                    <img src="images/branding/Banner-sign.png" alt="Locals Diner">
+                </a>
+            </div>
+            <ul class="nav-right">
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="hiring.html">Now Hiring</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <button class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="online-ordering-tab">
+            <a href="#">Online Ordering</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="about-hero">
+        <h1>Our Story</h1>
+        <p>A family tradition of serving great food at great prices to our community</p>
+    </section>
+
+    <!-- About Content -->
+    <div class="about-content">
+        <div class="container">
+            <!-- Our Legacy -->
+            <div class="about-section">
+                <div class="about-text">
+                    <h2>A Family Legacy</h2>
+                    <p>Locals Diner was built on a simple philosophy taught to us by our father: give them great food, great portions at a great price. These values have guided us from the very beginning and continue to be the heart of everything we do.</p>
+                    <p>Every meal we serve honors that legacy. We're proud to keep this family tradition alive, welcoming locals and visitors alike to experience homemade comfort food in a warm, friendly atmosphere.</p>
+                    <p>For years, we've been more than just a diner, we're a gathering place for the Dracut community, where neighbors become friends over a hearty meal.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/interior/interior_01.jpeg" alt="Locals Diner Interior">
+                </div>
+            </div>
+
+            <!-- Community Centered -->
+            <div class="about-section">
+                <div class="about-image">
+                    <img src="images/branding/IMG_0562.jpeg" alt="Locals Diner Community">
+                </div>
+                <div class="about-text">
+                    <h2>Community-Centered</h2>
+                    <p>At Locals Diner, you're not just a customer, you're family. We believe that good food brings people together, and we're committed to serving meals that create connections and memories.</p>
+                    <p>We pride ourselves in quality ingredients. Prepare everything with care and serve generous portions that reflect our commitment to value from our hearty breakfast platters to homemade lunches and delicious pies and desserts.</p>
+                    <p>Our dining room is designed to feel like home, with friendly service and an atmosphere that invites you to relax, enjoy, and come back soon.</p>
+                </div>
+            </div>
+
+            <!-- What We're About -->
+            <div class="about-section">
+                <div class="about-text">
+                    <h2>What We're About</h2>
+                    <p>We're about honest, homemade food served with a smile. We're about treating everyone like family and making sure no one leaves hungry. We're about keeping prices affordable so everyone in our community can enjoy a great meal.</p>
+                    <p>Whether you're stopping in for a quick breakfast before work, enjoying a leisurely lunch with friends, or picking up one of our famous pies for dessert, you can count on the same quality and care that's made us a local favorite.</p>
+                    <p>Thank you for being part of our story. We look forward to serving you!</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/exterior/exterior_01.jpeg" alt="Locals Diner Exterior">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Values -->
+    <section class="values-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: var(--dark-navy); margin-bottom: 3rem; font-family: 'Anton', sans-serif; letter-spacing: 1.5px; text-transform: uppercase;">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Quality</h3>
+                    <p>We use fresh, quality ingredients and prepare our dishes with care to deliver homemade flavor in every bite.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Generosity</h3>
+                    <p>Our portions are hearty and satisfying because we believe in giving you more value for your money.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Affordability</h3>
+                    <p>Great food shouldn't break the bank. We keep our prices fair so everyone can enjoy a delicious meal.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Community</h3>
+                    <p>We're proud to be a gathering place for our neighbors, friends, and families in Dracut.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-left">
+                    <p>1420 Lakeview Ave<br>Dracut, MA 01826</p>
+                    <p><a href="tel:9789570065">(978) 957-0065</a></p>
+                </div>
+                <div class="footer-section footer-center">
+                    <img src="images/branding/logo_alt2.png" alt="Locals Diner">
+                </div>
+                <div class="footer-section footer-right">
+                    <h4>Services</h4>
+                    <p>Dine-In<br>In-Store Pickup<br>Call Ahead<br>Online Ordering Coming Soon</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Locals Diner. All rights reserved. | Established in 2024</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

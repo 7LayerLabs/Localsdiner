@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locals Diner - Dracut MA | Great Food, Great Portions, Great People</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <style>
+        .map-section {
+            background-color: var(--cream);
+            padding: 4rem 0;
+        }
+
+        .map-section .map-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .map-section h2 {
+            font-size: 2.5rem;
+            color: var(--dark-navy);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 450px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Anton font for specific headings */
+        .overview-section h3,
+        .menu-preview h2,
+        .menu-card h3,
+        .news-section h2,
+        .news-card h3,
+        .testimonials h2,
+        .hours-section h2,
+        .map-section h2 {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* Popup Advertisement Modal */
+        .ad-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .ad-modal.active {
+            display: flex;
+        }
+
+        .ad-modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ad-modal-content img {
+            max-width: 90vw;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .ad-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--dark-navy);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .ad-modal-close:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .ad-modal-content {
+                max-width: 95%;
+            }
+        }
+
+        /* Online Ordering Tab */
+        .online-ordering-tab {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, var(--teal) 0%, #007A9A 100%);
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 142, 179, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .online-ordering-tab a {
+            color: var(--cream);
+            text-decoration: none;
+            display: block;
+        }
+
+        .online-ordering-tab::before {
+            content: 'COMING SOON';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%);
+            color: white;
+            font-size: 0.55rem;
+            padding: 3px 6px;
+            border-radius: 10px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+            z-index: 1;
+            box-shadow: 0 2px 8px rgba(255, 82, 82, 0.5);
+            letter-spacing: 0.5px;
+        }
+
+        .online-ordering-tab:hover {
+            background: linear-gradient(135deg, #00A5D1 0%, var(--teal) 100%);
+            transform: translateY(-50%) translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 142, 179, 0.5);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .online-ordering-tab {
+                display: none;
+            }
+        }
+
+        /* Facebook Icon */
+        .facebook-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+
+        .facebook-icon a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .facebook-icon img {
+            height: 45px;
+            width: auto;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .facebook-icon:hover img {
+            transform: scale(1.15);
+            filter: brightness(1.2);
+        }
+
+        @media (max-width: 1200px) {
+            .facebook-icon {
+                display: none;
+            }
+        }
+
+        /* Mobile Responsive - Loyalty Card & Map */
+        @media (max-width: 768px) {
+            .loyalty-content {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+
+            .loyalty-text h3 {
+                font-size: 1.6rem !important;
+            }
+
+            .loyalty-text p,
+            .loyalty-text ul {
+                font-size: 1rem !important;
+            }
+
+            .map-section {
+                padding: 3rem 0;
+            }
+
+            .map-section .map-wrapper {
+                padding: 2rem 1.5rem;
+            }
+
+            .map-section h2 {
+                font-size: 2rem;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .loyalty-text h3 {
+                font-size: 1.4rem !important;
+            }
+
+            .loyalty-text p,
+            .loyalty-text ul {
+                font-size: 0.95rem !important;
+            }
+
+            .map-section .map-wrapper {
+                padding: 1.5rem 1rem;
+            }
+
+            .map-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .map-container {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (Banner + Navigation) -->
+    <nav class="navbar">
+        <div class="facebook-icon">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/branding/Facebook-Logo-social-media-emblem-transparent-PNG-image.png" alt="Facebook">
+            </a>
+        </div>
+        <div class="nav-container">
+            <ul class="nav-left">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+            <div class="banner-logo">
+                <a href="index.html">
+                    <img src="images/branding/Banner-sign.png" alt="Locals Diner">
+                </a>
+            </div>
+            <ul class="nav-right">
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="hiring.html">Now Hiring</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <button class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="online-ordering-tab">
+            <a href="#">Online Ordering</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Where <span class="highlight-teal">Locals</span> Become <span class="highlight-teal">Family</span></h1>
+            <p class="tagline">Great Food • <span class="highlight-teal">Great Portions</span> • Great People</p>
+            <a href="menu.html" class="hero-button">View Menu</a>
+        </div>
+    </section>
+
+    <!-- Hours Section -->
+    <section class="hours-section">
+        <div class="container">
+            <h2>Hours</h2>
+            <div class="hours-grid">
+                <div class="hours-item">
+                    <span class="day">Monday - Tuesday</span>
+                    <span class="time">CLOSED</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Wednesday - Sunday</span>
+                    <span class="time">7:30 AM - 2:30 PM</span>
+                </div>
+            </div>
+            <p class="hours-note">Lunch starts at 11:00 AM | Sundays serving breakfast only | Hours may vary on holidays. Please call ahead!</p>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview-section">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-item">
+                    <h3>Welcome to Locals Diner</h3>
+                    <p>For years, we've been serving the Dracut community with the values our father taught us: give them great food, great portions at a great price. Every meal we serve honors that family legacy.</p>
+                    <p>We're proud to keep this tradition alive, welcoming locals and visitors alike to experience homemade comfort food in a warm, friendly atmosphere.</p>
+                </div>
+                <div class="overview-item">
+                    <h3>Community-Centered</h3>
+                    <p>At Locals Diner, you're not just a customer, you're family. We believe in quality ingredients, generous servings, and affordable prices that bring our community together.</p>
+                    <p>From hearty breakfasts, traditional lunches and homemade pies and desserts, everything is made with care and served with a smile.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Preview Section -->
+    <section class="menu-preview">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="menu-buttons">
+                <a href="menu.html#breakfast" class="menu-card">
+                    <img src="images/breakfast/breakfast_20.jpeg" alt="Breakfast">
+                    <h3>Breakfast</h3>
+                    <p>Start your day right</p>
+                </a>
+                <a href="menu.html#lunch-dinner" class="menu-card">
+                    <img src="images/lunch/lunch_dinner_13.jpeg" alt="Lunch">
+                    <h3>Lunch</h3>
+                    <p>Hearty comfort food</p>
+                </a>
+                <a href="menu.html#desserts" class="menu-card">
+                    <img src="images/desserts/dessert_01.jpeg" alt="Desserts">
+                    <h3>Homemade Pies</h3>
+                    <p>Fresh daily desserts</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Than Food Section -->
+    <section class="news-section">
+        <div class="container">
+            <h2>More Than Just Great Food</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <h3>Perfect for Parties & Gatherings</h3>
+                    <p>Planning a special event? We can accommodate large parties and gatherings! Whether it's a birthday celebration, family reunion, or team gathering, we've got plenty of space and delicious food for everyone.</p>
+                    <p style="margin-top: 1rem;"><a href="gallery.html#interior-gallery" style="color: var(--medium-blue); font-weight: bold; text-decoration: none;">See Our Location →</a></p>
+                </div>
+                <div class="news-card">
+                    <h3>Full Lottery License</h3>
+                    <p>Feeling lucky? We carry all your favorite lottery games including Keno! Stop in to grab your tickets while you enjoy breakfast or lunch.</p>
+                </div>
+                <div class="news-card">
+                    <h3>Shelves Full of Goodies</h3>
+                    <p>Browse our selection of local products, snacks, and specialty items. We even have treats for the puppies! Take home a little something extra to enjoy later.</p>
+                    <p style="margin-top: 1rem;"><a href="gallery.html#more-gallery" style="color: var(--medium-blue); font-weight: bold; text-decoration: none;">View Seasonal Treats →</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loyalty Card Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Join Our Loyalty Card Program</h2>
+            <div class="loyalty-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; max-width: 1000px; margin: 0 auto;">
+                <div class="loyalty-image">
+                    <img src="images/branding/branding_02.jpeg" alt="Locals Diner Loyalty Card" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                </div>
+                <div class="loyalty-text" style="text-align: left;">
+                    <h3 style="font-size: 2rem; color: var(--dark-navy); margin-bottom: 1rem;">Earn Rewards with Every Visit!</h3>
+                    <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 1rem;">Join our loyalty program and get rewarded for being part of the Locals Diner family! Here's how it works:</p>
+                    <ul style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; margin-left: 1.5rem;">
+                        <li>Make a purchase of $10 or more to get your card punched</li>
+                        <li>Collect 8 punches to earn <strong>$10 off</strong> your next visit!</li>
+                        <li>It's our way of saying thank you for your loyalty</li>
+                    </ul>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">Ask your server about signing up today!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-wrapper">
+                <h2>Find Us</h2>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.5!2d-71.3208!3d42.6744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3a7b5e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2s1420%20Lakeview%20Ave%2C%20Dracut%2C%20MA%2001826!5e0!3m2!1sen!2sus!4v1234567890"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <p style="text-align: center; margin-top: 2rem; font-size: 1.1rem; color: var(--medium-blue);">
+                    Conveniently located on Lakeview Ave with plenty of parking available for everyone.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-left">
+                    <p>1420 Lakeview Ave<br>Dracut, MA 01826</p>
+                    <p><a href="tel:9789570065">(978) 957-0065</a></p>
+                </div>
+                <div class="footer-section footer-center">
+                    <img src="images/branding/logo_alt2.png" alt="Locals Diner">
+                </div>
+                <div class="footer-section footer-right">
+                    <h4>Services</h4>
+                    <p>Dine-In<br>In-Store Pickup<br>Call Ahead<br>Online Ordering Coming Soon</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Locals Diner. All rights reserved. | Established in 2024</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Advertisement Popup Modal -->
+    <div class="ad-modal" id="ad-modal">
+        <div class="ad-modal-content">
+            <button class="ad-modal-close" id="ad-modal-close">&times;</button>
+            <img src="images/advertisement/pieorder_ad.png" alt="Pie Orders - Order Your Holiday Pies Now!">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Show advertisement modal on page load
+        window.addEventListener('load', function() {
+            const modal = document.getElementById('ad-modal');
+            const closeBtn = document.getElementById('ad-modal-close');
+
+            // Show modal after a short delay
+            setTimeout(function() {
+                modal.classList.add('active');
+            }, 500);
+
+            // Close modal when X button is clicked
+            closeBtn.addEventListener('click', function() {
+                modal.classList.remove('active');
+            });
+
+            // Close modal when clicking outside the content
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    modal.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
