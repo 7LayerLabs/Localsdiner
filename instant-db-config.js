@@ -25,6 +25,18 @@ const schema = {
     startDate: 'string',
     submittedAt: 'timestamp',
     status: 'string' // 'new', 'reviewed', 'contacted', 'hired', 'rejected'
+  },
+  communityBoard: {
+    businessName: 'string',
+    contactName: 'string',
+    email: 'string',
+    phone: 'string',
+    website: 'string',
+    message: 'string',
+    logoUrl: 'string', // URL to uploaded logo/business card
+    submittedAt: 'timestamp',
+    status: 'string', // 'pending', 'approved', 'featured', 'rejected'
+    featured: 'boolean' // Whether to display on the community page
   }
 };
 

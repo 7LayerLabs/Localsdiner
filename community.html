@@ -191,6 +191,11 @@
             box-sizing: border-box;
         }
 
+        .form-group input[type="file"] {
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
@@ -486,6 +491,12 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="logo-upload">Upload Logo or Business Card *</label>
+                        <input type="file" id="logo-upload" name="logo-upload" accept="image/*" required>
+                        <p style="font-size: 0.9rem; color: var(--medium-blue); margin-top: 0.5rem;">Accepted formats: JPG, PNG, GIF (Max 5MB)</p>
+                    </div>
+
+                    <div class="form-group">
                         <label for="board-message">Tell us about your business/organization *</label>
                         <textarea id="board-message" name="board-message" required placeholder="What do you do? Why would you like to be featured on our community board?"></textarea>
                     </div>
@@ -520,64 +531,79 @@
 
     <script src="script.js"></script>
 
-    <!-- EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        // Initialize EmailJS
-        emailjs.init('UKgWJmXoEsab0b8Iu');
+    <!-- InstantDB -->
+    <script type="module">
+        import { init, tx, id } from 'https://cdn.jsdelivr.net/npm/@instantdb/core/dist/module/index.js';
+
+        // Initialize InstantDB - Replace with your actual APP_ID from https://instantdb.com/dash
+        const APP_ID = 'YOUR_APP_ID_HERE';
+        const db = init({ appId: APP_ID });
 
         // Community Board Form submission handler
         document.getElementById('community-board-form').addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            // Collect form data
-            const formData = {
-                businessName: document.getElementById('business-name').value,
-                contactName: document.getElementById('contact-name').value,
-                email: document.getElementById('board-email').value,
-                phone: document.getElementById('board-phone').value || 'Not provided',
-                website: document.getElementById('website').value || 'Not provided',
-                message: document.getElementById('board-message').value,
-                submittedAt: new Date().toISOString()
-            };
+            const submitBtn = this.querySelector('.submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Uploading...';
 
             try {
-                // Disable submit button
-                const submitBtn = this.querySelector('.submit-btn');
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
+                // Get the logo file
+                const logoFile = document.getElementById('logo-upload').files[0];
 
-                console.log('Community Board Form data:', formData);
-                console.log('Sending email via EmailJS...');
+                // Validate file size (5MB max)
+                if (logoFile.size > 5 * 1024 * 1024) {
+                    throw new Error('File size must be less than 5MB');
+                }
 
-                // Send email notification via EmailJS (you'll need to create a new template for this)
-                const emailResult = await emailjs.send('service_w19q69e', 'template_community_board', {
-                    business_name: formData.businessName,
-                    contact_name: formData.contactName,
-                    from_email: formData.email,
-                    phone: formData.phone,
-                    website: formData.website,
-                    message: formData.message,
-                    submitted_at: new Date(formData.submittedAt).toLocaleString()
+                // Convert file to base64 for storage
+                const reader = new FileReader();
+                const logoBase64 = await new Promise((resolve, reject) => {
+                    reader.onload = () => resolve(reader.result);
+                    reader.onerror = reject;
+                    reader.readAsDataURL(logoFile);
                 });
-                console.log('Email sent successfully:', emailResult);
+
+                // Collect form data
+                const formData = {
+                    businessName: document.getElementById('business-name').value,
+                    contactName: document.getElementById('contact-name').value,
+                    email: document.getElementById('board-email').value,
+                    phone: document.getElementById('board-phone').value || '',
+                    website: document.getElementById('website').value || '',
+                    message: document.getElementById('board-message').value,
+                    logoUrl: logoBase64, // Store as base64 string
+                    submittedAt: Date.now(),
+                    status: 'pending',
+                    featured: false
+                };
+
+                console.log('Community Board Form submission:', {
+                    ...formData,
+                    logoUrl: logoBase64.substring(0, 50) + '...' // Log truncated version
+                });
+
+                submitBtn.textContent = 'Submitting...';
+
+                // Save to InstantDB
+                await db.transact([
+                    tx.communityBoard[id()].update(formData)
+                ]);
 
                 // Success
                 alert('Thank you for your submission! We will review your information and get back to you soon.');
                 this.reset();
 
             } catch (error) {
-                console.error('Full error object:', error);
-                console.error('Error message:', error.message);
-                console.error('Error text:', error.text);
+                console.error('Submission error:', error);
 
-                // Note: If template doesn't exist yet, this will fail
-                // You'll need to create a new EmailJS template named 'template_community_board'
-                alert('Thank you for your interest! Your submission has been received. We will contact you soon.');
-                this.reset();
+                if (error.message.includes('APP_ID')) {
+                    alert('Database configuration needed. Please contact the site administrator.');
+                } else {
+                    alert('Error: ' + error.message + '\n\nPlease try again or contact us directly at (978) 957-0065.');
+                }
             } finally {
                 // Re-enable submit button
-                const submitBtn = this.querySelector('.submit-btn');
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Submit Your Information';
             }
