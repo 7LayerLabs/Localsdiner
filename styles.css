@@ -236,7 +236,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background-image: linear-gradient(rgba(13, 19, 33, 0.5), rgba(13, 19, 33, 0.6)), url('interior_01.jpeg');
+    background-image: linear-gradient(rgba(13, 19, 33, 0.5), rgba(13, 19, 33, 0.6)), url('images/interior/interior_01.jpeg');
     background-size: cover;
     background-position: center 15%;
     background-attachment: fixed;
