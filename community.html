@@ -191,11 +191,6 @@
             box-sizing: border-box;
         }
 
-        .form-group input[type="file"] {
-            padding: 0.5rem;
-            cursor: pointer;
-        }
-
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
@@ -486,14 +481,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="website">Website or Social Media</label>
-                        <input type="url" id="website" name="website" placeholder="https://">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="logo-upload">Upload Logo or Business Card *</label>
-                        <input type="file" id="logo-upload" name="logo-upload" accept="image/*" required>
-                        <p style="font-size: 0.9rem; color: var(--medium-blue); margin-top: 0.5rem;">Accepted formats: JPG, PNG, GIF (Max 5MB)</p>
+                        <label for="website">Website or Social Media *</label>
+                        <input type="url" id="website" name="website" placeholder="https://" required>
                     </div>
 
                     <div class="form-group">
@@ -545,45 +534,24 @@
 
             const submitBtn = this.querySelector('.submit-btn');
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Uploading...';
+            submitBtn.textContent = 'Submitting...';
 
             try {
-                // Get the logo file
-                const logoFile = document.getElementById('logo-upload').files[0];
-
-                // Validate file size (5MB max)
-                if (logoFile.size > 5 * 1024 * 1024) {
-                    throw new Error('File size must be less than 5MB');
-                }
-
-                // Convert file to base64 for storage
-                const reader = new FileReader();
-                const logoBase64 = await new Promise((resolve, reject) => {
-                    reader.onload = () => resolve(reader.result);
-                    reader.onerror = reject;
-                    reader.readAsDataURL(logoFile);
-                });
-
                 // Collect form data
                 const formData = {
                     businessName: document.getElementById('business-name').value,
                     contactName: document.getElementById('contact-name').value,
                     email: document.getElementById('board-email').value,
                     phone: document.getElementById('board-phone').value || '',
-                    website: document.getElementById('website').value || '',
+                    website: document.getElementById('website').value,
                     message: document.getElementById('board-message').value,
-                    logoUrl: logoBase64, // Store as base64 string
+                    logoUrl: '', // Will be added manually by Locals Diner team
                     submittedAt: Date.now(),
                     status: 'pending',
                     featured: false
                 };
 
-                console.log('Community Board Form submission:', {
-                    ...formData,
-                    logoUrl: logoBase64.substring(0, 50) + '...' // Log truncated version
-                });
-
-                submitBtn.textContent = 'Submitting...';
+                console.log('Community Board Form submission:', formData);
 
                 // Save to InstantDB
                 await db.transact([
