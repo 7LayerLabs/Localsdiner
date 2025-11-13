@@ -578,17 +578,25 @@ body {
     .nav-right {
         position: fixed;
         left: -100%;
-        top: 140px;
         flex-direction: column;
         background-color: #231F20;
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        padding: 2rem 0;
+        padding: 1.5rem 0;
         gap: 1.5rem;
-        border-top: 2px solid var(--teal);
         justify-content: center;
         z-index: 999;
+    }
+
+    .nav-left {
+        top: 140px;
+        border-top: 2px solid var(--teal);
+    }
+
+    .nav-right {
+        top: 320px;
+        border-top: 1px solid var(--medium-blue);
     }
 
     .nav-left.active,
@@ -619,9 +627,12 @@ body {
         height: 70px;
     }
 
-    .nav-left,
-    .nav-right {
+    .nav-left {
         top: 120px;
+    }
+
+    .nav-right {
+        top: 290px;
     }
 
     /* Hero Section */
@@ -752,9 +763,12 @@ body {
         height: 60px;
     }
 
-    .nav-left,
-    .nav-right {
+    .nav-left {
         top: 105px;
+    }
+
+    .nav-right {
+        top: 265px;
     }
 
     /* Hero Section */
