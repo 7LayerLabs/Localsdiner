@@ -3,7 +3,7 @@
 // You'll need to get your APP_ID from https://instantdb.com/dash
 // After creating an account, create a new app and copy the APP_ID
 
-const APP_ID = 'YOUR_APP_ID_HERE'; // Replace with your actual InstantDB App ID
+const APP_ID = 'a00de4bc-52f7-47e6-992c-c2e4c7c95899'; // InstantDB App ID
 
 // Initialize InstantDB
 const db = init({ appId: APP_ID });
