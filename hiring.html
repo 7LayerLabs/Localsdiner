@@ -727,9 +727,9 @@
 
                 // Send email notification via EmailJS
                 await emailjs.send('service_w19q69e', 'template_b1qtkgr', {
-                    from_name: formData.name,
-                    from_email: formData.email,
-                    phone: formData.phone,
+                    applicant_name: formData.name,
+                    applicant_email: formData.email,
+                    applicant_phone: formData.phone,
                     position: formData.position,
                     days_available: formData.daysAvailable.join(', '),
                     hours_preferred: formData.hoursPreferred,
