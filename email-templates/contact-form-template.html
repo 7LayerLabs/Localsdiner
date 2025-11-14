@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Contact Form Submission - Locals Diner</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f4f4;">
+    <table role="presentation" style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <td align="center" style="padding: 40px 0;">
+                <table role="presentation" style="width: 600px; border-collapse: collapse; background-color: #ffffff; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+
+                    <!-- Header -->
+                    <tr>
+                        <td style="padding: 30px; background: linear-gradient(135deg, #0D1321 0%, #1E3A5F 100%); text-align: center;">
+                            <h1 style="margin: 0; color: #F5F1E3; font-size: 28px; font-weight: bold;">New Contact Form Submission</h1>
+                            <p style="margin: 10px 0 0 0; color: #F5F1E3; font-size: 14px;">Locals Diner</p>
+                        </td>
+                    </tr>
+
+                    <!-- Content -->
+                    <tr>
+                        <td style="padding: 40px 30px;">
+                            <p style="margin: 0 0 20px 0; font-size: 16px; color: #333333;">You've received a new message from your website contact form:</p>
+
+                            <!-- Submission Details -->
+                            <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                                <tr>
+                                    <td style="padding: 15px; background-color: #f8f9fa; border-left: 4px solid #008EB3;">
+                                        <table role="presentation" style="width: 100%; border-collapse: collapse;">
+                                            <tr>
+                                                <td style="padding: 8px 0; font-weight: bold; color: #0D1321; width: 120px;">Name:</td>
+                                                <td style="padding: 8px 0; color: #333333;">{{from_name}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 0; font-weight: bold; color: #0D1321;">Email:</td>
+                                                <td style="padding: 8px 0; color: #333333;"><a href="mailto:{{from_email}}" style="color: #008EB3; text-decoration: none;">{{from_email}}</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 0; font-weight: bold; color: #0D1321;">Phone:</td>
+                                                <td style="padding: 8px 0; color: #333333;">{{phone}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 0; font-weight: bold; color: #0D1321;">Submitted:</td>
+                                                <td style="padding: 8px 0; color: #333333;">{{submitted_at}}</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Message -->
+                            <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin-top: 20px;">
+                                <p style="margin: 0 0 10px 0; font-weight: bold; color: #0D1321; font-size: 16px;">Message:</p>
+                                <p style="margin: 0; color: #333333; line-height: 1.6; white-space: pre-wrap;">{{message}}</p>
+                            </div>
+
+                            <!-- Action Button -->
+                            <div style="text-align: center; margin-top: 30px;">
+                                <a href="mailto:{{from_email}}" style="display: inline-block; padding: 12px 30px; background-color: #008EB3; color: #ffffff; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 16px;">Reply to Customer</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td style="padding: 20px 30px; background-color: #f8f9fa; text-align: center; border-top: 1px solid #e0e0e0;">
+                            <p style="margin: 0; color: #666666; font-size: 12px;">Locals Diner | 1420 Lakeview Ave, Dracut, MA 01826 | (978) 957-0065</p>
+                            <p style="margin: 10px 0 0 0; color: #666666; font-size: 12px;">This is an automated notification from your website contact form.</p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
