@@ -243,8 +243,18 @@
 
         @media (max-width: 768px) {
             .community-section {
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
                 gap: 2rem;
+            }
+
+            /* Default order for text-first sections */
+            .community-text {
+                order: 1;
+            }
+
+            .community-image {
+                order: 2;
             }
 
             .community-hero h1 {
