@@ -77,6 +77,76 @@
             text-transform: uppercase;
         }
 
+        /* Popup Advertisement Modal */
+        .ad-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .ad-modal.active {
+            display: flex;
+        }
+
+        .ad-modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ad-modal-content img {
+            max-width: 90vw;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .ad-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--dark-navy);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .ad-modal-close:hover {
+            background-color: white;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .ad-modal-content {
+                max-width: 95%;
+            }
+        }
+
         /* Online Ordering Tab */
         .online-ordering-tab {
             position: absolute;
@@ -423,6 +493,45 @@
         </div>
     </footer>
 
+    <!-- Advertisement Popup Modal -->
+    <div class="ad-modal" id="ad-modal">
+        <div class="ad-modal-content">
+            <button class="ad-modal-close" id="ad-modal-close">&times;</button>
+            <img src="images/advertisement/gingerbread.jpg" alt="Gingerbread Special - Limited Time!">
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+        // Show advertisement modal on page load
+        window.addEventListener('load', function() {
+            const modal = document.getElementById('ad-modal');
+            const closeBtn = document.getElementById('ad-modal-close');
+
+            // Show modal after a short delay
+            setTimeout(function() {
+                modal.classList.add('active');
+            }, 500);
+
+            // Close modal when X button is clicked
+            closeBtn.addEventListener('click', function() {
+                modal.classList.remove('active');
+            });
+
+            // Close modal when clicking outside the content
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    modal.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
