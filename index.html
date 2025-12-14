@@ -499,45 +499,6 @@
         </div>
     </footer>
 
-    <!-- Advertisement Popup Modal -->
-    <div class="ad-modal" id="ad-modal">
-        <div class="ad-modal-content">
-            <button class="ad-modal-close" id="ad-modal-close">&times;</button>
-            <img src="images/advertisement/gingerbread.jpg" alt="Gingerbread Special - Limited Time!">
-        </div>
-    </div>
-
     <script src="script.js"></script>
-    <script>
-        // Show advertisement modal on page load
-        window.addEventListener('load', function() {
-            const modal = document.getElementById('ad-modal');
-            const closeBtn = document.getElementById('ad-modal-close');
-
-            // Show modal after a short delay
-            setTimeout(function() {
-                modal.classList.add('active');
-            }, 500);
-
-            // Close modal when X button is clicked
-            closeBtn.addEventListener('click', function() {
-                modal.classList.remove('active');
-            });
-
-            // Close modal when clicking outside the content
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.classList.remove('active');
-                }
-            });
-
-            // Close modal with Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    modal.classList.remove('active');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
