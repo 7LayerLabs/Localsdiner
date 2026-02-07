@@ -3,7 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu | Locals Diner</title>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <title>Menu - Breakfast, Lunch & Homemade Pies | Locals Diner Dracut MA</title>
+    <meta name="description" content="View the full menu at Locals Diner in Dracut, MA. Hearty breakfasts, comfort food lunches, homemade pies, and generous portions at great prices. Served Wed-Sun 7:30 AM - 2:00 PM.">
+    <link rel="canonical" href="https://www.localsdiner.com/menu.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.localsdiner.com/menu.html">
+    <meta property="og:title" content="Menu - Breakfast, Lunch & Homemade Pies | Locals Diner">
+    <meta property="og:description" content="View the full menu at Locals Diner in Dracut, MA. Hearty breakfasts, comfort food lunches, homemade pies, and generous portions at great prices.">
+    <meta property="og:image" content="https://www.localsdiner.com/images/branding/community.jpg">
+    <meta property="og:site_name" content="Locals Diner">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Menu - Breakfast, Lunch & Homemade Pies | Locals Diner">
+    <meta name="twitter:description" content="View the full menu at Locals Diner in Dracut, MA. Hearty breakfasts, comfort food lunches, homemade pies, and generous portions at great prices.">
+    <meta name="twitter:image" content="https://www.localsdiner.com/images/branding/community.jpg">
+
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -11,6 +38,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <style>
         .menu-hero {
@@ -396,40 +424,43 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:1rem;background:var(--dark-navy);color:var(--cream);text-decoration:none;font-weight:bold;" onfocus="this.style.position='fixed';this.style.left='10px';this.style.top='10px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible';" onblur="this.style.position='absolute';this.style.left='-9999px';this.style.width='1px';this.style.height='1px';this.style.overflow='hidden';">Skip to main content</a>
+
     <!-- Header (Banner + Navigation) -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="facebook-icon">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                <img src="images/branding/Facebook-Logo-social-media-emblem-transparent-PNG-image.png" alt="Facebook">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
+                <img src="images/branding/Facebook-Logo-social-media-emblem-transparent-PNG-image.png" alt="Locals Diner Facebook page">
             </a>
         </div>
         <div class="nav-container">
             <ul class="nav-left">
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="menu.html" aria-label="View our menu">Menu</a></li>
+                <li><a href="gallery.html" aria-label="Browse our photo gallery">Gallery</a></li>
+                <li><a href="about.html" aria-label="Learn about us">About Us</a></li>
             </ul>
             <div class="banner-logo">
-                <a href="index.html">
-                    <img src="images/branding/Banner-sign.png" alt="Locals Diner">
+                <a href="index.html" aria-label="Locals Diner home page">
+                    <img src="images/branding/Banner-sign.png" alt="Locals Diner banner logo">
                 </a>
             </div>
             <ul class="nav-right">
-                <li><a href="hiring.html">Join the Team</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="community.html">Community</a></li>
+                <li><a href="hiring.html" aria-label="View job openings">Join the Team</a></li>
+                <li><a href="contact.html" aria-label="Contact us">Contact</a></li>
+                <li><a href="community.html" aria-label="Our community involvement">Community</a></li>
             </ul>
-            <button class="menu-toggle" id="menu-toggle">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
         <div class="online-ordering-tab">
-            <a href="#">Online Ordering</a>
+            <a href="#" aria-label="Online ordering coming soon">Online Ordering</a>
         </div>
     </nav>
 
+    <main id="main-content">
     <!-- Hero -->
     <section class="menu-hero" id="menu-top">
         <h1>Our Menu</h1>
@@ -841,6 +872,7 @@
             <div id="beverages" class="menu-section">
                 <h2>Beverages</h2>
                 <div class="menu-category">
+                    <h3 class="category-title">Drinks</h3>
                     <div class="menu-grid">
                         <div class="menu-item"><h4>Coffee or Tea</h4></div>
                         <div class="menu-item"><h4>Iced Tea or Iced Coffee</h4></div>
@@ -860,16 +892,18 @@
         </div>
     </div>
 
+    </main>
+
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section footer-left">
                     <p>1420 Lakeview Ave<br>Dracut, MA 01826</p>
-                    <p><a href="tel:9789570065">(978) 957-0065</a></p>
+                    <p><a href="tel:9789570065" aria-label="Call Locals Diner at (978) 957-0065" onclick="gtag('event', 'phone_click', {'event_category': 'contact', 'event_label': 'footer'});">(978) 957-0065</a></p>
                 </div>
                 <div class="footer-section footer-center">
-                    <img src="images/branding/logo_alt2.png" alt="Locals Diner">
+                    <img src="images/branding/logo_alt2.png" alt="Locals Diner logo" loading="lazy">
                 </div>
                 <div class="footer-section footer-right">
                     <h4>Services</h4>

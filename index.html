@@ -3,7 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <title>Locals Diner - Dracut MA | Great Food, Great Portions, Great People</title>
+    <meta name="description" content="Where Locals Become Family. Serving the Dracut community with great food, great portions, and great prices. Open Wednesday-Sunday 7:30 AM - 2:00 PM.">
+    <link rel="canonical" href="https://www.localsdiner.com/">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.localsdiner.com/">
@@ -11,15 +24,14 @@
     <meta property="og:description" content="Where Locals Become Family. Serving the Dracut community with great food, great portions, and great prices. Open Wednesday-Sunday 7:30 AM - 2:00 PM.">
     <meta property="og:image" content="https://www.localsdiner.com/images/branding/community.jpg">
     <meta property="og:site_name" content="Locals Diner">
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.localsdiner.com/">
     <meta name="twitter:title" content="Locals Diner - Dracut MA | Great Food, Great Portions, Great People">
     <meta name="twitter:description" content="Where Locals Become Family. Serving the Dracut community with great food, great portions, and great prices. Open Wednesday-Sunday 7:30 AM - 2:00 PM.">
     <meta name="twitter:image" content="https://www.localsdiner.com/images/branding/community.jpg">
-    
-    <title>Locals Diner - Dracut MA | Great Food, Great Portions, Great People</title>
+
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -27,7 +39,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+    <!-- Restaurant Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Restaurant", "LocalBusiness"],
+      "name": "Locals Diner",
+      "image": "https://www.localsdiner.com/images/branding/community.jpg",
+      "url": "https://www.localsdiner.com/",
+      "telephone": "(978) 957-0065",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1420 Lakeview Ave",
+        "addressLocality": "Dracut",
+        "addressRegion": "MA",
+        "postalCode": "01826",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "07:30",
+          "closes": "14:00"
+        }
+      ],
+      "servesCuisine": ["American", "Comfort Food", "Diner"],
+      "priceRange": "$$",
+      "menu": "https://www.localsdiner.com/menu.html",
+      "hasMenu": {
+        "@type": "Menu",
+        "url": "https://www.localsdiner.com/menu.html"
+      },
+      "sameAs": [
+        "https://www.facebook.com"
+      ]
+    }
+    </script>
     <style>
         .map-section {
             background-color: var(--cream);
@@ -309,46 +360,49 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:1rem;background:var(--dark-navy);color:var(--cream);text-decoration:none;font-weight:bold;" onfocus="this.style.position='fixed';this.style.left='10px';this.style.top='10px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible';" onblur="this.style.position='absolute';this.style.left='-9999px';this.style.width='1px';this.style.height='1px';this.style.overflow='hidden';">Skip to main content</a>
+
     <!-- Header (Banner + Navigation) -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="facebook-icon">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                <img src="images/branding/Facebook-Logo-social-media-emblem-transparent-PNG-image.png" alt="Facebook">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
+                <img src="images/branding/Facebook-Logo-social-media-emblem-transparent-PNG-image.png" alt="Locals Diner Facebook page">
             </a>
         </div>
         <div class="nav-container">
             <ul class="nav-left">
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="menu.html" aria-label="View our menu">Menu</a></li>
+                <li><a href="gallery.html" aria-label="Browse our photo gallery">Gallery</a></li>
+                <li><a href="about.html" aria-label="Learn about us">About Us</a></li>
             </ul>
             <div class="banner-logo">
-                <a href="index.html">
-                    <img src="images/branding/Banner-sign.png" alt="Locals Diner">
+                <a href="index.html" aria-label="Locals Diner home page">
+                    <img src="images/branding/Banner-sign.png" alt="Locals Diner banner logo">
                 </a>
             </div>
             <ul class="nav-right">
-                <li><a href="hiring.html">Join the Team</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="community.html">Community</a></li>
+                <li><a href="hiring.html" aria-label="View job openings">Join the Team</a></li>
+                <li><a href="contact.html" aria-label="Contact us">Contact</a></li>
+                <li><a href="community.html" aria-label="Our community involvement">Community</a></li>
             </ul>
-            <button class="menu-toggle" id="menu-toggle">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
         <div class="online-ordering-tab">
-            <a href="#">Online Ordering</a>
+            <a href="#" aria-label="Online ordering coming soon">Online Ordering</a>
         </div>
     </nav>
 
+    <main id="main-content">
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Where <span class="highlight-teal">Locals</span> Become <span class="highlight-teal">Family</span></h1>
             <p class="tagline">Great Food • <span class="highlight-teal">Great Portions</span> • Great People</p>
-            <a href="menu.html" class="hero-button">View Menu</a>
+            <a href="menu.html" class="hero-button" onclick="gtag('event', 'view_menu', {'event_category': 'engagement', 'event_label': 'hero_cta'});">View Menu</a>
         </div>
     </section>
 
@@ -393,18 +447,18 @@
         <div class="container">
             <h2>Our Menu</h2>
             <div class="menu-buttons">
-                <a href="menu.html#breakfast" class="menu-card">
-                    <img src="images/breakfast/breakfast_20.jpeg" alt="Breakfast">
+                <a href="menu.html#breakfast" class="menu-card" onclick="gtag('event', 'view_menu', {'event_category': 'engagement', 'event_label': 'breakfast_card'});">
+                    <img src="images/breakfast/breakfast_20.jpeg" alt="Stack of fluffy pancakes with butter and syrup at Locals Diner" loading="lazy">
                     <h3>Breakfast</h3>
                     <p>Start your day right</p>
                 </a>
-                <a href="menu.html#lunch-dinner" class="menu-card">
-                    <img src="images/lunch/lunch_dinner_13.jpeg" alt="Lunch">
+                <a href="menu.html#lunch-dinner" class="menu-card" onclick="gtag('event', 'view_menu', {'event_category': 'engagement', 'event_label': 'lunch_card'});">
+                    <img src="images/lunch/lunch_dinner_13.jpeg" alt="Hearty lunch plate with comfort food at Locals Diner" loading="lazy">
                     <h3>Lunch</h3>
                     <p>Hearty comfort food</p>
                 </a>
-                <a href="menu.html#desserts" class="menu-card">
-                    <img src="images/desserts/dessert_01.jpeg" alt="Desserts">
+                <a href="menu.html#desserts" class="menu-card" onclick="gtag('event', 'view_menu', {'event_category': 'engagement', 'event_label': 'desserts_card'});">
+                    <img src="images/desserts/dessert_01.jpeg" alt="Homemade pie fresh from the oven at Locals Diner" loading="lazy">
                     <h3>Homemade Pies</h3>
                     <p>Fresh daily desserts</p>
                 </a>
@@ -441,7 +495,7 @@
             <h2>Join Our Loyalty Card Program</h2>
             <div class="loyalty-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; max-width: 1000px; margin: 0 auto;">
                 <div class="loyalty-image">
-                    <img src="images/branding/branding_02.jpeg" alt="Locals Diner Loyalty Card" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <img src="images/branding/branding_02.jpeg" alt="Locals Diner loyalty punch card - earn $10 off after 8 visits" loading="lazy" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                 </div>
                 <div class="loyalty-text" style="text-align: left;">
                     <h3 style="font-size: 2rem; color: var(--dark-navy); margin-bottom: 1rem;">Earn Rewards with Every Visit!</h3>
@@ -462,12 +516,13 @@
         <div class="container">
             <div class="map-wrapper">
                 <h2>Find Us</h2>
-                <div class="map-container">
+                <div class="map-container" onclick="gtag('event', 'map_click', {'event_category': 'engagement', 'event_label': 'directions'});">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.5!2d-71.3208!3d42.6744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3a7b5e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2s1420%20Lakeview%20Ave%2C%20Dracut%2C%20MA%2001826!5e0!3m2!1sen!2sus!4v1234567890"
                         allowfullscreen=""
                         loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Google Maps showing Locals Diner at 1420 Lakeview Ave, Dracut MA">
                     </iframe>
                 </div>
                 <p style="text-align: center; margin-top: 2rem; font-size: 1.1rem; color: var(--medium-blue);">
@@ -477,16 +532,18 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section footer-left">
                     <p>1420 Lakeview Ave<br>Dracut, MA 01826</p>
-                    <p><a href="tel:9789570065">(978) 957-0065</a></p>
+                    <p><a href="tel:9789570065" aria-label="Call Locals Diner at (978) 957-0065" onclick="gtag('event', 'phone_click', {'event_category': 'contact', 'event_label': 'footer'});">(978) 957-0065</a></p>
                 </div>
                 <div class="footer-section footer-center">
-                    <img src="images/branding/logo_alt2.png" alt="Locals Diner">
+                    <img src="images/branding/logo_alt2.png" alt="Locals Diner logo" loading="lazy">
                 </div>
                 <div class="footer-section footer-right">
                     <h4>Services</h4>

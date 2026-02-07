@@ -3,7 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | Locals Diner</title>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <title>Photo Gallery - Food, Dining Room & Events | Locals Diner Dracut MA</title>
+    <meta name="description" content="Browse photos of Locals Diner in Dracut, MA. See our homemade breakfast and lunch dishes, cozy dining room, seasonal treats, and community events.">
+    <link rel="canonical" href="https://www.localsdiner.com/gallery.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.localsdiner.com/gallery.html">
+    <meta property="og:title" content="Photo Gallery - Food, Dining Room & Events | Locals Diner">
+    <meta property="og:description" content="Browse photos of Locals Diner in Dracut, MA. See our homemade breakfast and lunch dishes, cozy dining room, seasonal treats, and community events.">
+    <meta property="og:image" content="https://www.localsdiner.com/images/branding/community.jpg">
+    <meta property="og:site_name" content="Locals Diner">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Photo Gallery - Food, Dining Room & Events | Locals Diner">
+    <meta name="twitter:description" content="Browse photos of Locals Diner in Dracut, MA. See our homemade breakfast and lunch dishes, cozy dining room, seasonal treats, and community events.">
+    <meta name="twitter:image" content="https://www.localsdiner.com/images/branding/community.jpg">
+
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -11,6 +38,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <style>
         .gallery-page {
@@ -482,40 +510,43 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:1rem;background:var(--dark-navy);color:var(--cream);text-decoration:none;font-weight:bold;" onfocus="this.style.position='fixed';this.style.left='10px';this.style.top='10px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible';" onblur="this.style.position='absolute';this.style.left='-9999px';this.style.width='1px';this.style.height='1px';this.style.overflow='hidden';">Skip to main content</a>
+
     <!-- Header (Banner + Navigation) -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="facebook-icon">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                <img src="images/branding/Facebook-Logo-social-media-emblem-transparent-PNG-image.png" alt="Facebook">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
+                <img src="images/branding/Facebook-Logo-social-media-emblem-transparent-PNG-image.png" alt="Locals Diner Facebook page">
             </a>
         </div>
         <div class="nav-container">
             <ul class="nav-left">
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="menu.html" aria-label="View our menu">Menu</a></li>
+                <li><a href="gallery.html" aria-label="Browse our photo gallery">Gallery</a></li>
+                <li><a href="about.html" aria-label="Learn about us">About Us</a></li>
             </ul>
             <div class="banner-logo">
-                <a href="index.html">
-                    <img src="images/branding/Banner-sign.png" alt="Locals Diner">
+                <a href="index.html" aria-label="Locals Diner home page">
+                    <img src="images/branding/Banner-sign.png" alt="Locals Diner banner logo">
                 </a>
             </div>
             <ul class="nav-right">
-                <li><a href="hiring.html">Join the Team</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="community.html">Community</a></li>
+                <li><a href="hiring.html" aria-label="View job openings">Join the Team</a></li>
+                <li><a href="contact.html" aria-label="Contact us">Contact</a></li>
+                <li><a href="community.html" aria-label="Our community involvement">Community</a></li>
             </ul>
-            <button class="menu-toggle" id="menu-toggle">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
         <div class="online-ordering-tab">
-            <a href="#">Online Ordering</a>
+            <a href="#" aria-label="Online ordering coming soon">Online Ordering</a>
         </div>
     </nav>
 
+    <main id="main-content">
     <!-- Gallery Content -->
     <div class="gallery-page">
         <div class="container">
@@ -543,17 +574,17 @@
                     <a href="#more-gallery">Seasonal Treats</a>
                 </div>
                 <div class="gallery-grid">
-                    <div class="gallery-item" onclick="openLightbox('images/exterior/exterior_02.jpeg')"><span class="image-number">1</span><img loading="lazy" src="images/exterior/exterior_02.jpeg" alt="Exterior"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/exterior/exterior_01.jpeg')"><span class="image-number">2</span><img loading="lazy" src="images/exterior/exterior_01.jpeg" alt="Exterior"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_12.jpeg')"><span class="image-number">3</span><img loading="lazy" src="images/interior/interior_12.jpeg" alt="Interior"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_10.jpeg')"><span class="image-number">4</span><img loading="lazy" src="images/interior/interior_10.jpeg" alt="Interior"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_07.jpeg')"><span class="image-number">5</span><img loading="lazy" src="images/interior/interior_07.jpeg" alt="Interior"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_08.jpeg')"><span class="image-number">6</span><img loading="lazy" src="images/interior/interior_08.jpeg" alt="Interior"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_09.jpeg')"><span class="image-number">7</span><img loading="lazy" src="images/interior/interior_09.jpeg" alt="Interior"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_04.jpeg')"><span class="image-number">8</span><img loading="lazy" src="images/interior/interior_04.jpeg" alt="Interior"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_05.jpeg')"><span class="image-number">9</span><img loading="lazy" src="images/interior/interior_05.jpeg" alt="Interior"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_06.jpeg')"><span class="image-number">10</span><img loading="lazy" src="images/interior/interior_06.jpeg" alt="Interior"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_03.jpeg')"><span class="image-number">11</span><img loading="lazy" src="images/interior/interior_03.jpeg" alt="Interior"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/exterior/exterior_02.jpeg')"><span class="image-number">1</span><img loading="lazy" src="images/exterior/exterior_02.jpeg" alt="Locals Diner exterior storefront view from the street"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/exterior/exterior_01.jpeg')"><span class="image-number">2</span><img loading="lazy" src="images/exterior/exterior_01.jpeg" alt="Locals Diner building exterior with signage"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_12.jpeg')"><span class="image-number">3</span><img loading="lazy" src="images/interior/interior_12.jpeg" alt="Locals Diner interior dining area with booths"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_10.jpeg')"><span class="image-number">4</span><img loading="lazy" src="images/interior/interior_10.jpeg" alt="Cozy interior seating at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_07.jpeg')"><span class="image-number">5</span><img loading="lazy" src="images/interior/interior_07.jpeg" alt="Locals Diner counter seating area"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_08.jpeg')"><span class="image-number">6</span><img loading="lazy" src="images/interior/interior_08.jpeg" alt="Warm and welcoming dining room at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_09.jpeg')"><span class="image-number">7</span><img loading="lazy" src="images/interior/interior_09.jpeg" alt="Locals Diner interior decor and ambiance"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_04.jpeg')"><span class="image-number">8</span><img loading="lazy" src="images/interior/interior_04.jpeg" alt="Table setup inside Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_05.jpeg')"><span class="image-number">9</span><img loading="lazy" src="images/interior/interior_05.jpeg" alt="Locals Diner dining room ready for guests"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_06.jpeg')"><span class="image-number">10</span><img loading="lazy" src="images/interior/interior_06.jpeg" alt="Spacious interior at Locals Diner perfect for groups"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/interior/interior_03.jpeg')"><span class="image-number">11</span><img loading="lazy" src="images/interior/interior_03.jpeg" alt="Locals Diner interior with community atmosphere"></div>
                 </div>
             </div>
 
@@ -569,30 +600,30 @@
                     <a href="#more-gallery">Seasonal Treats</a>
                 </div>
                 <div class="gallery-grid">
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_07.jpeg')"><span class="image-number">1</span><img loading="lazy" src="images/breakfast/breakfast_07.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_03.jpeg')"><span class="image-number">2</span><img loading="lazy" src="images/breakfast/breakfast_03.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_23.jpeg')"><span class="image-number">3</span><img loading="lazy" src="images/breakfast/breakfast_23.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_24.jpeg')"><span class="image-number">4</span><img loading="lazy" src="images/breakfast/breakfast_24.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_09.jpeg')"><span class="image-number">5</span><img loading="lazy" src="images/breakfast/breakfast_09.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_21.jpeg')"><span class="image-number">6</span><img loading="lazy" src="images/breakfast/breakfast_21.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_18.jpeg')"><span class="image-number">7</span><img loading="lazy" src="images/breakfast/breakfast_18.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_17.jpeg')"><span class="image-number">8</span><img loading="lazy" src="images/breakfast/breakfast_17.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_19.jpeg')"><span class="image-number">9</span><img loading="lazy" src="images/breakfast/breakfast_19.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_16.jpeg')"><span class="image-number">10</span><img loading="lazy" src="images/breakfast/breakfast_16.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_20.jpeg')"><span class="image-number">11</span><img loading="lazy" src="images/breakfast/breakfast_20.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_08.jpeg')"><span class="image-number">12</span><img loading="lazy" src="images/breakfast/breakfast_08.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_25.jpeg')"><span class="image-number">13</span><img loading="lazy" src="images/breakfast/breakfast_25.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_27.jpeg')"><span class="image-number">14</span><img loading="lazy" src="images/breakfast/breakfast_27.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_02.jpeg')"><span class="image-number">15</span><img loading="lazy" src="images/breakfast/breakfast_02.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_10.jpeg')"><span class="image-number">16</span><img loading="lazy" src="images/breakfast/breakfast_10.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_12.jpeg')"><span class="image-number">17</span><img loading="lazy" src="images/breakfast/breakfast_12.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_14.jpeg')"><span class="image-number">18</span><img loading="lazy" src="images/breakfast/breakfast_14.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_15.jpeg')"><span class="image-number">19</span><img loading="lazy" src="images/breakfast/breakfast_15.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_05.jpeg')"><span class="image-number">20</span><img loading="lazy" src="images/breakfast/breakfast_05.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_01.jpeg')"><span class="image-number">21</span><img loading="lazy" src="images/breakfast/breakfast_01.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_22.jpeg')"><span class="image-number">22</span><img loading="lazy" src="images/breakfast/breakfast_22.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_31.jpeg')"><span class="image-number">23</span><img loading="lazy" src="images/breakfast/breakfast_31.jpeg" alt="Breakfast"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_04.jpeg')"><span class="image-number">24</span><img loading="lazy" src="images/breakfast/breakfast_04.jpeg" alt="Breakfast"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_07.jpeg')"><span class="image-number">1</span><img loading="lazy" src="images/breakfast/breakfast_07.jpeg" alt="Homemade breakfast plate served at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_03.jpeg')"><span class="image-number">2</span><img loading="lazy" src="images/breakfast/breakfast_03.jpeg" alt="Eggs and toast breakfast combo at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_23.jpeg')"><span class="image-number">3</span><img loading="lazy" src="images/breakfast/breakfast_23.jpeg" alt="Hearty breakfast with home fries and eggs"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_24.jpeg')"><span class="image-number">4</span><img loading="lazy" src="images/breakfast/breakfast_24.jpeg" alt="Classic diner breakfast with bacon and eggs"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_09.jpeg')"><span class="image-number">5</span><img loading="lazy" src="images/breakfast/breakfast_09.jpeg" alt="Fluffy pancakes stacked high at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_21.jpeg')"><span class="image-number">6</span><img loading="lazy" src="images/breakfast/breakfast_21.jpeg" alt="French toast served golden brown"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_18.jpeg')"><span class="image-number">7</span><img loading="lazy" src="images/breakfast/breakfast_18.jpeg" alt="Eggs Benedict with hollandaise sauce"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_17.jpeg')"><span class="image-number">8</span><img loading="lazy" src="images/breakfast/breakfast_17.jpeg" alt="Omelet filled with fresh vegetables and cheese"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_19.jpeg')"><span class="image-number">9</span><img loading="lazy" src="images/breakfast/breakfast_19.jpeg" alt="Breakfast sandwich on a fresh roll"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_16.jpeg')"><span class="image-number">10</span><img loading="lazy" src="images/breakfast/breakfast_16.jpeg" alt="Sausage and eggs breakfast platter"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_20.jpeg')"><span class="image-number">11</span><img loading="lazy" src="images/breakfast/breakfast_20.jpeg" alt="Buttermilk pancakes with syrup and butter"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_08.jpeg')"><span class="image-number">12</span><img loading="lazy" src="images/breakfast/breakfast_08.jpeg" alt="Belgian waffle topped with fruit"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_25.jpeg')"><span class="image-number">13</span><img loading="lazy" src="images/breakfast/breakfast_25.jpeg" alt="Belly Buster breakfast special with all the fixings"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_27.jpeg')"><span class="image-number">14</span><img loading="lazy" src="images/breakfast/breakfast_27.jpeg" alt="Country breakfast with biscuits and gravy"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_02.jpeg')"><span class="image-number">15</span><img loading="lazy" src="images/breakfast/breakfast_02.jpeg" alt="Corned beef hash and eggs at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_10.jpeg')"><span class="image-number">16</span><img loading="lazy" src="images/breakfast/breakfast_10.jpeg" alt="Steak tips and eggs breakfast plate"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_12.jpeg')"><span class="image-number">17</span><img loading="lazy" src="images/breakfast/breakfast_12.jpeg" alt="Breakfast burrito with home fries"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_14.jpeg')"><span class="image-number">18</span><img loading="lazy" src="images/breakfast/breakfast_14.jpeg" alt="Blueberry pancakes served fresh"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_15.jpeg')"><span class="image-number">19</span><img loading="lazy" src="images/breakfast/breakfast_15.jpeg" alt="Two eggs any style with crispy bacon"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_05.jpeg')"><span class="image-number">20</span><img loading="lazy" src="images/breakfast/breakfast_05.jpeg" alt="Homemade breakfast combo at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_01.jpeg')"><span class="image-number">21</span><img loading="lazy" src="images/breakfast/breakfast_01.jpeg" alt="Classic American breakfast with toast"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_22.jpeg')"><span class="image-number">22</span><img loading="lazy" src="images/breakfast/breakfast_22.jpeg" alt="Generous portion breakfast at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_31.jpeg')"><span class="image-number">23</span><img loading="lazy" src="images/breakfast/breakfast_31.jpeg" alt="Specialty breakfast dish at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/breakfast/breakfast_04.jpeg')"><span class="image-number">24</span><img loading="lazy" src="images/breakfast/breakfast_04.jpeg" alt="Fresh breakfast platter with home fries"></div>
                 </div>
             </div>
 
@@ -608,18 +639,18 @@
                     <a href="#more-gallery">Seasonal Treats</a>
                 </div>
                 <div class="gallery-grid">
-                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_18.jpeg')"><span class="image-number">1</span><img loading="lazy" src="images/lunch/lunch_dinner_18.jpeg" alt="Lunch"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_08.jpeg')"><span class="image-number">2</span><img loading="lazy" src="images/lunch/lunch_dinner_08.jpeg" alt="Lunch"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_13.jpeg')"><span class="image-number">3</span><img loading="lazy" src="images/lunch/lunch_dinner_13.jpeg" alt="Lunch"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_03.jpeg')"><span class="image-number">4</span><img loading="lazy" src="images/lunch/lunch_dinner_03.jpeg" alt="Lunch"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_06.jpeg')"><span class="image-number">5</span><img loading="lazy" src="images/lunch/lunch_dinner_06.jpeg" alt="Lunch"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_20.jpeg')"><span class="image-number">6</span><img loading="lazy" src="images/lunch/lunch_dinner_20.jpeg" alt="Lunch"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_29.jpeg')"><span class="image-number">7</span><img loading="lazy" src="images/lunch/lunch_dinner_29.jpeg" alt="Lunch"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_28.jpeg')"><span class="image-number">8</span><img loading="lazy" src="images/lunch/lunch_dinner_28.jpeg" alt="Lunch"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_26.jpeg')"><span class="image-number">9</span><img loading="lazy" src="images/lunch/lunch_dinner_26.jpeg" alt="Lunch"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_24.jpeg')"><span class="image-number">10</span><img loading="lazy" src="images/lunch/lunch_dinner_24.jpeg" alt="Lunch"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_22.jpeg')"><span class="image-number">11</span><img loading="lazy" src="images/lunch/lunch_dinner_22.jpeg" alt="Lunch"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_21.jpeg')"><span class="image-number">12</span><img loading="lazy" src="images/lunch/lunch_dinner_21.jpeg" alt="Lunch"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_18.jpeg')"><span class="image-number">1</span><img loading="lazy" src="images/lunch/lunch_dinner_18.jpeg" alt="Hearty lunch plate with comfort food at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_08.jpeg')"><span class="image-number">2</span><img loading="lazy" src="images/lunch/lunch_dinner_08.jpeg" alt="Hand-made burger with fries at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_13.jpeg')"><span class="image-number">3</span><img loading="lazy" src="images/lunch/lunch_dinner_13.jpeg" alt="Traditional comfort food lunch special"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_03.jpeg')"><span class="image-number">4</span><img loading="lazy" src="images/lunch/lunch_dinner_03.jpeg" alt="Marinated steak tips with peppers and onions"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_06.jpeg')"><span class="image-number">5</span><img loading="lazy" src="images/lunch/lunch_dinner_06.jpeg" alt="Fried haddock seafood plate at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_20.jpeg')"><span class="image-number">6</span><img loading="lazy" src="images/lunch/lunch_dinner_20.jpeg" alt="Chicken parmesan lunch plate with pasta"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_29.jpeg')"><span class="image-number">7</span><img loading="lazy" src="images/lunch/lunch_dinner_29.jpeg" alt="Hot sandwich with crispy fries on the side"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_28.jpeg')"><span class="image-number">8</span><img loading="lazy" src="images/lunch/lunch_dinner_28.jpeg" alt="Classic diner lunch with generous portions"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_26.jpeg')"><span class="image-number">9</span><img loading="lazy" src="images/lunch/lunch_dinner_26.jpeg" alt="Stuffed turkey dinner with all the trimmings"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_24.jpeg')"><span class="image-number">10</span><img loading="lazy" src="images/lunch/lunch_dinner_24.jpeg" alt="Homemade meatloaf with gravy at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_22.jpeg')"><span class="image-number">11</span><img loading="lazy" src="images/lunch/lunch_dinner_22.jpeg" alt="Bacon cheddar burger fresh off the grill"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/lunch/lunch_dinner_21.jpeg')"><span class="image-number">12</span><img loading="lazy" src="images/lunch/lunch_dinner_21.jpeg" alt="Deli sandwich with chips at Locals Diner"></div>
                 </div>
             </div>
 
@@ -635,9 +666,9 @@
                     <a href="#more-gallery">Seasonal Treats</a>
                 </div>
                 <div class="gallery-grid">
-                    <div class="gallery-item" onclick="openLightbox('images/drinks/drinks_01.jpeg')"><span class="image-number">1</span><img loading="lazy" src="images/drinks/drinks_01.jpeg" alt="Drinks"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/soup/soup_01.jpeg')"><span class="image-number">2</span><img loading="lazy" src="images/soup/soup_01.jpeg" alt="Soup"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/sides/sides_02.jpeg')"><span class="image-number">3</span><span class="image-tag">Proudly serving Cote's Famous Beans</span><img loading="lazy" src="images/sides/sides_02.jpeg" alt="Sides"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/drinks/drinks_01.jpeg')"><span class="image-number">1</span><img loading="lazy" src="images/drinks/drinks_01.jpeg" alt="Fresh beverages including coffee and juice at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/soup/soup_01.jpeg')"><span class="image-number">2</span><img loading="lazy" src="images/soup/soup_01.jpeg" alt="Homemade soup of the day served in a bowl"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/sides/sides_02.jpeg')"><span class="image-number">3</span><span class="image-tag">Proudly serving Cote's Famous Beans</span><img loading="lazy" src="images/sides/sides_02.jpeg" alt="Cote's Famous Beans served as a side dish"></div>
                 </div>
             </div>
 
@@ -653,16 +684,16 @@
                     <a href="#more-gallery">Seasonal Treats</a>
                 </div>
                 <div class="gallery-grid">
-                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_01.jpeg')"><span class="image-number">1</span><img loading="lazy" src="images/desserts/dessert_01.jpeg" alt="Desserts"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_05.jpeg')"><span class="image-number">2</span><img loading="lazy" src="images/desserts/dessert_05.jpeg" alt="Desserts"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_07.jpeg')"><span class="image-number">3</span><img loading="lazy" src="images/desserts/dessert_07.jpeg" alt="Desserts"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_09.jpeg')"><span class="image-number">4</span><img loading="lazy" src="images/desserts/dessert_09.jpeg" alt="Desserts"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_04.jpeg')"><span class="image-number">5</span><img loading="lazy" src="images/desserts/dessert_04.jpeg" alt="Desserts"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_10.jpeg')"><span class="image-number">6</span><img loading="lazy" src="images/desserts/dessert_10.jpeg" alt="Desserts"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_03.jpeg')"><span class="image-number">7</span><img loading="lazy" src="images/desserts/dessert_03.jpeg" alt="Desserts"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_06.jpeg')"><span class="image-number">8</span><img loading="lazy" src="images/desserts/dessert_06.jpeg" alt="Desserts"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_08.jpeg')"><span class="image-number">9</span><img loading="lazy" src="images/desserts/dessert_08.jpeg" alt="Desserts"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_02.jpeg')"><span class="image-number">10</span><img loading="lazy" src="images/desserts/dessert_02.jpeg" alt="Desserts"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_01.jpeg')"><span class="image-number">1</span><img loading="lazy" src="images/desserts/dessert_01.jpeg" alt="Homemade pie fresh from the oven at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_05.jpeg')"><span class="image-number">2</span><img loading="lazy" src="images/desserts/dessert_05.jpeg" alt="Slice of homemade cream pie with whipped topping"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_07.jpeg')"><span class="image-number">3</span><img loading="lazy" src="images/desserts/dessert_07.jpeg" alt="Fresh baked fruit pie on display"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_09.jpeg')"><span class="image-number">4</span><img loading="lazy" src="images/desserts/dessert_09.jpeg" alt="Assorted homemade pies available daily"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_04.jpeg')"><span class="image-number">5</span><img loading="lazy" src="images/desserts/dessert_04.jpeg" alt="Delicious dessert plated and ready to serve"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_10.jpeg')"><span class="image-number">6</span><img loading="lazy" src="images/desserts/dessert_10.jpeg" alt="Homemade dessert special at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_03.jpeg')"><span class="image-number">7</span><img loading="lazy" src="images/desserts/dessert_03.jpeg" alt="Golden brown pie crust on a fresh baked pie"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_06.jpeg')"><span class="image-number">8</span><img loading="lazy" src="images/desserts/dessert_06.jpeg" alt="Pie slice served with a cup of coffee"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_08.jpeg')"><span class="image-number">9</span><img loading="lazy" src="images/desserts/dessert_08.jpeg" alt="Rich and decadent homemade dessert"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/desserts/dessert_02.jpeg')"><span class="image-number">10</span><img loading="lazy" src="images/desserts/dessert_02.jpeg" alt="Whole homemade pie ready for slicing"></div>
                 </div>
             </div>
 
@@ -678,44 +709,46 @@
                     <a href="#desserts-gallery">Desserts & Pies</a>
                 </div>
                 <div class="gallery-grid">
-                    <div class="gallery-item" onclick="openLightbox('images/seasonal/RenderedImage.jpeg')"><span class="image-number">1</span><img loading="lazy" src="images/seasonal/RenderedImage.jpeg" alt="Goodies"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/seasonal/78473529739__6BEE4FC6-770A-4E9A-A61F-9B7B63E3951C.fullsizerender.jpeg')"><span class="image-number">2</span><img loading="lazy" src="images/seasonal/78473529739__6BEE4FC6-770A-4E9A-A61F-9B7B63E3951C.fullsizerender.jpeg" alt="Goodies"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/seasonal/78473527581__44B7B26E-BCD0-41FE-9554-66B2FAF1564B.fullsizerender.jpeg')"><span class="image-number">3</span><img loading="lazy" src="images/seasonal/78473527581__44B7B26E-BCD0-41FE-9554-66B2FAF1564B.fullsizerender.jpeg" alt="Goodies"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/seasonal/78473695120__EA5B287A-14AA-480D-A737-408D775F90EC.fullsizerender.jpeg')"><span class="image-number">4</span><img loading="lazy" src="images/seasonal/78473695120__EA5B287A-14AA-480D-A737-408D775F90EC.fullsizerender.jpeg" alt="Goodies"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/seasonal/RenderedImage 2.jpeg')"><span class="image-number">5</span><img loading="lazy" src="images/seasonal/RenderedImage 2.jpeg" alt="Goodies"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/seasonal/78473703430__CA70298E-21D4-42DE-A32A-574183287F00.fullsizerender.jpeg')"><span class="image-number">6</span><img loading="lazy" src="images/seasonal/78473703430__CA70298E-21D4-42DE-A32A-574183287F00.fullsizerender.jpeg" alt="Goodies"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/seasonal/78473532612__215A2B0B-CC69-4FD7-8644-A26CDEED4152.fullsizerender.jpeg')"><span class="image-number">7</span><img loading="lazy" src="images/seasonal/78473532612__215A2B0B-CC69-4FD7-8644-A26CDEED4152.fullsizerender.jpeg" alt="Goodies"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/seasonal/78473535178__2D8E79CF-4BD2-4674-B660-FB01930C8947.fullsizerender.jpeg')"><span class="image-number">8</span><img loading="lazy" src="images/seasonal/78473535178__2D8E79CF-4BD2-4674-B660-FB01930C8947.fullsizerender.jpeg" alt="Goodies"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/seasonal/78473698774__C99AC446-EED6-40CB-BA9E-4033656219E9.jpeg')"><span class="image-number">9</span><img loading="lazy" src="images/seasonal/78473698774__C99AC446-EED6-40CB-BA9E-4033656219E9.jpeg" alt="Goodies"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/seasonal/seasonal_04.jpeg')"><span class="image-number">10</span><img loading="lazy" src="images/seasonal/seasonal_04.jpeg" alt="Seasonal"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/seasonal/seasonal_05.JPG')"><span class="image-number">11</span><img loading="lazy" src="images/seasonal/seasonal_05.JPG" alt="Seasonal"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/seasonal/seasonal_06.jpeg')"><span class="image-number">12</span><img loading="lazy" src="images/seasonal/seasonal_06.jpeg" alt="Seasonal"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/seasonal/seasonal_01.jpeg')"><span class="image-number">13</span><img loading="lazy" src="images/seasonal/seasonal_01.jpeg" alt="Seasonal"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/seasonal/seasonal_02.jpeg')"><span class="image-number">14</span><img loading="lazy" src="images/seasonal/seasonal_02.jpeg" alt="Seasonal"></div>
-                    <div class="gallery-item" onclick="openLightbox('images/seasonal/seasonal_03.jpeg')"><span class="image-number">15</span><img loading="lazy" src="images/seasonal/seasonal_03.jpeg" alt="Seasonal"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/seasonal/RenderedImage.jpeg')"><span class="image-number">1</span><img loading="lazy" src="images/seasonal/RenderedImage.jpeg" alt="Seasonal goodies and treats on display at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/seasonal/78473529739__6BEE4FC6-770A-4E9A-A61F-9B7B63E3951C.fullsizerender.jpeg')"><span class="image-number">2</span><img loading="lazy" src="images/seasonal/78473529739__6BEE4FC6-770A-4E9A-A61F-9B7B63E3951C.fullsizerender.jpeg" alt="Local products and snacks available for purchase"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/seasonal/78473527581__44B7B26E-BCD0-41FE-9554-66B2FAF1564B.fullsizerender.jpeg')"><span class="image-number">3</span><img loading="lazy" src="images/seasonal/78473527581__44B7B26E-BCD0-41FE-9554-66B2FAF1564B.fullsizerender.jpeg" alt="Specialty items on the shelves at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/seasonal/78473695120__EA5B287A-14AA-480D-A737-408D775F90EC.fullsizerender.jpeg')"><span class="image-number">4</span><img loading="lazy" src="images/seasonal/78473695120__EA5B287A-14AA-480D-A737-408D775F90EC.fullsizerender.jpeg" alt="Seasonal candy and gift items at the diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/seasonal/RenderedImage 2.jpeg')"><span class="image-number">5</span><img loading="lazy" src="images/seasonal/RenderedImage 2.jpeg" alt="Shelves stocked with local goodies and treats"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/seasonal/78473703430__CA70298E-21D4-42DE-A32A-574183287F00.fullsizerender.jpeg')"><span class="image-number">6</span><img loading="lazy" src="images/seasonal/78473703430__CA70298E-21D4-42DE-A32A-574183287F00.fullsizerender.jpeg" alt="Puppy treats and pet-friendly goodies available"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/seasonal/78473532612__215A2B0B-CC69-4FD7-8644-A26CDEED4152.fullsizerender.jpeg')"><span class="image-number">7</span><img loading="lazy" src="images/seasonal/78473532612__215A2B0B-CC69-4FD7-8644-A26CDEED4152.fullsizerender.jpeg" alt="Seasonal snacks and local products display"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/seasonal/78473535178__2D8E79CF-4BD2-4674-B660-FB01930C8947.fullsizerender.jpeg')"><span class="image-number">8</span><img loading="lazy" src="images/seasonal/78473535178__2D8E79CF-4BD2-4674-B660-FB01930C8947.fullsizerender.jpeg" alt="Variety of take-home treats at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/seasonal/78473698774__C99AC446-EED6-40CB-BA9E-4033656219E9.jpeg')"><span class="image-number">9</span><img loading="lazy" src="images/seasonal/78473698774__C99AC446-EED6-40CB-BA9E-4033656219E9.jpeg" alt="Browse our selection of local specialty items"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/seasonal/seasonal_04.jpeg')"><span class="image-number">10</span><img loading="lazy" src="images/seasonal/seasonal_04.jpeg" alt="Seasonal holiday treats and decorations"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/seasonal/seasonal_05.JPG')"><span class="image-number">11</span><img loading="lazy" src="images/seasonal/seasonal_05.JPG" alt="Holiday themed goodies at Locals Diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/seasonal/seasonal_06.jpeg')"><span class="image-number">12</span><img loading="lazy" src="images/seasonal/seasonal_06.jpeg" alt="Festive seasonal display at the diner"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/seasonal/seasonal_01.jpeg')"><span class="image-number">13</span><img loading="lazy" src="images/seasonal/seasonal_01.jpeg" alt="Seasonal specials and limited-time treats"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/seasonal/seasonal_02.jpeg')"><span class="image-number">14</span><img loading="lazy" src="images/seasonal/seasonal_02.jpeg" alt="Holiday gift items and seasonal merchandise"></div>
+                    <div class="gallery-item" onclick="openLightbox('images/seasonal/seasonal_03.jpeg')"><span class="image-number">15</span><img loading="lazy" src="images/seasonal/seasonal_03.jpeg" alt="Locals Diner seasonal treats and goodies collection"></div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()" role="dialog" aria-label="Image lightbox viewer">
+        <span class="lightbox-close" role="button" aria-label="Close lightbox">&times;</span>
         <div class="lightbox-content">
-            <img id="lightbox-img" src="" alt="">
+            <img id="lightbox-img" src="" alt="Enlarged gallery photo">
         </div>
     </div>
 
+    </main>
+
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section footer-left">
                     <p>1420 Lakeview Ave<br>Dracut, MA 01826</p>
-                    <p><a href="tel:9789570065">(978) 957-0065</a></p>
+                    <p><a href="tel:9789570065" aria-label="Call Locals Diner at (978) 957-0065" onclick="gtag('event', 'phone_click', {'event_category': 'contact', 'event_label': 'footer'});">(978) 957-0065</a></p>
                 </div>
                 <div class="footer-section footer-center">
-                    <img src="images/branding/logo_alt2.png" alt="Locals Diner">
+                    <img src="images/branding/logo_alt2.png" alt="Locals Diner logo" loading="lazy">
                 </div>
                 <div class="footer-section footer-right">
                     <h4>Services</h4>
