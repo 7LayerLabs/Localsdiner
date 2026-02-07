@@ -22,7 +22,7 @@
     <meta property="og:url" content="https://www.localsdiner.com/">
     <meta property="og:title" content="Locals Diner - Dracut MA | Great Food, Great Portions, Great People">
     <meta property="og:description" content="Where Locals Become Family. Serving the Dracut community with great food, great portions, and great prices. Open Wednesday-Sunday 7:30 AM - 2:00 PM.">
-    <meta property="og:image" content="https://www.localsdiner.com/images/branding/community.jpg">
+    <meta property="og:image" content="https://www.localsdiner.com/images/branding/Logo_alt.png">
     <meta property="og:site_name" content="Locals Diner">
 
     <!-- Twitter -->
@@ -30,7 +30,7 @@
     <meta name="twitter:url" content="https://www.localsdiner.com/">
     <meta name="twitter:title" content="Locals Diner - Dracut MA | Great Food, Great Portions, Great People">
     <meta name="twitter:description" content="Where Locals Become Family. Serving the Dracut community with great food, great portions, and great prices. Open Wednesday-Sunday 7:30 AM - 2:00 PM.">
-    <meta name="twitter:image" content="https://www.localsdiner.com/images/branding/community.jpg">
+    <meta name="twitter:image" content="https://www.localsdiner.com/images/branding/Logo_alt.png">
 
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -48,7 +48,7 @@
       "@context": "https://schema.org",
       "@type": ["Restaurant", "LocalBusiness"],
       "name": "Locals Diner",
-      "image": "https://www.localsdiner.com/images/branding/community.jpg",
+      "image": "https://www.localsdiner.com/images/branding/Logo_alt.png",
       "url": "https://www.localsdiner.com/",
       "telephone": "(978) 957-0065",
       "address": {
@@ -79,285 +79,6 @@
       ]
     }
     </script>
-    <style>
-        .map-section {
-            background-color: var(--cream);
-            padding: 4rem 0;
-        }
-
-        .map-section .map-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .map-section h2 {
-            font-size: 2.5rem;
-            color: var(--dark-navy);
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .map-container {
-            width: 100%;
-            height: 450px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Anton font for specific headings */
-        .overview-section h3,
-        .menu-preview h2,
-        .menu-card h3,
-        .news-section h2,
-        .news-card h3,
-        .testimonials h2,
-        .hours-section h2,
-        .map-section h2 {
-            font-family: 'Anton', sans-serif;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        /* Popup Advertisement Modal */
-        .ad-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .ad-modal.active {
-            display: flex;
-        }
-
-        .ad-modal-content {
-            position: relative;
-            max-width: 45vw;
-            max-height: 75vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .ad-modal-content img {
-            max-width: 45vw;
-            max-height: 75vh;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            display: block;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .ad-modal-close {
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border: none;
-            border-radius: 50%;
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--dark-navy);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .ad-modal-close:hover {
-            background-color: white;
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 768px) {
-            .ad-modal-content {
-                max-width: 95vw;
-                max-height: 85vh;
-            }
-
-            .ad-modal-content img {
-                max-width: 95vw;
-                max-height: 85vh;
-            }
-        }
-
-        /* Online Ordering Tab */
-        .online-ordering-tab {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: linear-gradient(135deg, var(--teal) 0%, #007A9A 100%);
-            padding: 0.7rem 1.5rem;
-            border-radius: 50px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 142, 179, 0.4);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            white-space: nowrap;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-
-        .online-ordering-tab a {
-            color: var(--cream);
-            text-decoration: none;
-            display: block;
-        }
-
-        .online-ordering-tab::before {
-            content: 'COMING SOON';
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%);
-            color: white;
-            font-size: 0.55rem;
-            padding: 3px 6px;
-            border-radius: 10px;
-            font-weight: bold;
-            animation: pulse 2s infinite;
-            z-index: 1;
-            box-shadow: 0 2px 8px rgba(255, 82, 82, 0.5);
-            letter-spacing: 0.5px;
-        }
-
-        .online-ordering-tab:hover {
-            background: linear-gradient(135deg, #00A5D1 0%, var(--teal) 100%);
-            transform: translateY(-50%) translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 142, 179, 0.5);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-
-        @media (max-width: 1200px) {
-            .online-ordering-tab {
-                display: none;
-            }
-        }
-
-        /* Facebook Icon */
-        .facebook-icon {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            transition: transform 0.3s ease;
-        }
-
-        .facebook-icon a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .facebook-icon img {
-            height: 45px;
-            width: auto;
-            transition: transform 0.3s ease, filter 0.3s ease;
-        }
-
-        .facebook-icon:hover img {
-            transform: scale(1.15);
-            filter: brightness(1.2);
-        }
-
-        @media (max-width: 1200px) {
-            .facebook-icon {
-                display: none;
-            }
-        }
-
-        /* Mobile Responsive - Loyalty Card & Map */
-        @media (max-width: 768px) {
-            .loyalty-content {
-                grid-template-columns: 1fr !important;
-                gap: 2rem !important;
-            }
-
-            .loyalty-text h3 {
-                font-size: 1.6rem !important;
-            }
-
-            .loyalty-text p,
-            .loyalty-text ul {
-                font-size: 1rem !important;
-            }
-
-            .map-section {
-                padding: 3rem 0;
-            }
-
-            .map-section .map-wrapper {
-                padding: 2rem 1.5rem;
-            }
-
-            .map-section h2 {
-                font-size: 2rem;
-            }
-
-            .map-container {
-                height: 300px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .loyalty-text h3 {
-                font-size: 1.4rem !important;
-            }
-
-            .loyalty-text p,
-            .loyalty-text ul {
-                font-size: 0.95rem !important;
-            }
-
-            .map-section .map-wrapper {
-                padding: 1.5rem 1rem;
-            }
-
-            .map-section h2 {
-                font-size: 1.8rem;
-            }
-
-            .map-container {
-                height: 250px;
-            }
-        }
-    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-to-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:1rem;background:var(--dark-navy);color:var(--cream);text-decoration:none;font-weight:bold;" onfocus="this.style.position='fixed';this.style.left='10px';this.style.top='10px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible';" onblur="this.style.position='absolute';this.style.left='-9999px';this.style.width='1px';this.style.height='1px';this.style.overflow='hidden';">Skip to main content</a>
@@ -374,6 +95,7 @@
                 <li><a href="menu.html" aria-label="View our menu">Menu</a></li>
                 <li><a href="gallery.html" aria-label="Browse our photo gallery">Gallery</a></li>
                 <li><a href="about.html" aria-label="Learn about us">About Us</a></li>
+                <li><a href="rewards.html" aria-label="Our rewards program">Rewards</a></li>
             </ul>
             <div class="banner-logo">
                 <a href="index.html" aria-label="Locals Diner home page">
@@ -382,8 +104,8 @@
             </div>
             <ul class="nav-right">
                 <li><a href="hiring.html" aria-label="View job openings">Join the Team</a></li>
-                <li><a href="contact.html" aria-label="Contact us">Contact</a></li>
                 <li><a href="community.html" aria-label="Our community involvement">Community</a></li>
+                <li><a href="contact.html" aria-label="Find us">Find Us</a></li>
             </ul>
             <button class="menu-toggle" id="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                 <span></span>
@@ -397,12 +119,13 @@
     </nav>
 
     <main id="main-content">
-    <!-- Hero Section -->
+    <!-- Hero Section with Big Logo -->
     <section class="hero">
         <div class="hero-content">
+            <img src="images/branding/Logo_alt.png" alt="Locals Diner - Breakfast & Lunch, Dracut MA" class="hero-logo">
             <h1>Where <span class="highlight-teal">Locals</span> Become <span class="highlight-teal">Family</span></h1>
             <p class="tagline">Great Food • <span class="highlight-teal">Great Portions</span> • Great People</p>
-            <a href="menu.html" class="hero-button" onclick="gtag('event', 'view_menu', {'event_category': 'engagement', 'event_label': 'hero_cta'});">View Menu</a>
+            <a href="menu.html" class="hero-button" onclick="gtag('event', 'view_menu', {'event_category': 'engagement', 'event_label': 'hero_cta'});">View Our Menu</a>
         </div>
     </section>
 
@@ -432,11 +155,13 @@
                     <h3>Welcome to Locals Diner</h3>
                     <p>For years, we've been serving the Dracut community with the values our father taught us: give them great food, great portions at a great price. Every meal we serve honors that family legacy.</p>
                     <p>We're proud to keep this tradition alive, welcoming locals and visitors alike to experience homemade comfort food in a warm, friendly atmosphere.</p>
+                    <a href="about.html" class="section-link">Read Our Story →</a>
                 </div>
                 <div class="overview-item">
                     <h3>Community-Centered</h3>
                     <p>At Locals Diner, you're not just a customer, you're family. We believe in quality ingredients, generous servings, and affordable prices that bring our community together.</p>
                     <p>From hearty breakfasts, traditional lunches and homemade pies and desserts, everything is made with care and served with a smile.</p>
+                    <a href="community.html" class="section-link">Our Community →</a>
                 </div>
             </div>
         </div>
@@ -452,7 +177,7 @@
                     <h3>Breakfast</h3>
                     <p>Start your day right</p>
                 </a>
-                <a href="menu.html#lunch-dinner" class="menu-card" onclick="gtag('event', 'view_menu', {'event_category': 'engagement', 'event_label': 'lunch_card'});">
+                <a href="menu.html#lunch" class="menu-card" onclick="gtag('event', 'view_menu', {'event_category': 'engagement', 'event_label': 'lunch_card'});">
                     <img src="images/lunch/lunch_dinner_13.jpeg" alt="Hearty lunch plate with comfort food at Locals Diner" loading="lazy">
                     <h3>Lunch</h3>
                     <p>Hearty comfort food</p>
@@ -472,18 +197,21 @@
             <h2>More Than Just Great Food</h2>
             <div class="news-grid">
                 <div class="news-card">
+                    <div class="news-card-icon"><i class="fas fa-users"></i></div>
                     <h3>Perfect for Parties & Gatherings</h3>
                     <p>Planning a special event? We can accommodate large parties and gatherings! Whether it's a birthday celebration, family reunion, or team gathering, we've got plenty of space and delicious food for everyone.</p>
-                    <p style="margin-top: 1rem;"><a href="gallery.html#interior-gallery" style="color: var(--medium-blue); font-weight: bold; text-decoration: none;">See Our Location →</a></p>
+                    <a href="gallery.html#interior-gallery" class="section-link">See Our Location →</a>
                 </div>
                 <div class="news-card">
+                    <div class="news-card-icon"><i class="fas fa-ticket-alt"></i></div>
                     <h3>Full Lottery License</h3>
                     <p>Feeling lucky? We carry all your favorite lottery games including Keno! Stop in to grab your tickets while you enjoy breakfast or lunch.</p>
                 </div>
                 <div class="news-card">
+                    <div class="news-card-icon"><i class="fas fa-store"></i></div>
                     <h3>Shelves Full of Goodies</h3>
                     <p>Browse our selection of local products, snacks, and specialty items. We even have treats for the puppies! Take home a little something extra to enjoy later.</p>
-                    <p style="margin-top: 1rem;"><a href="gallery.html#more-gallery" style="color: var(--medium-blue); font-weight: bold; text-decoration: none;">View Seasonal Treats →</a></p>
+                    <a href="gallery.html#more-gallery" class="section-link">View Seasonal Treats →</a>
                 </div>
             </div>
         </div>
@@ -492,21 +220,49 @@
     <!-- Loyalty Card Section -->
     <section class="testimonials">
         <div class="container">
-            <h2>Join Our Loyalty Card Program</h2>
-            <div class="loyalty-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; max-width: 1000px; margin: 0 auto;">
+            <h2>Locals Loyalty Rewards</h2>
+            <div class="loyalty-content">
                 <div class="loyalty-image">
-                    <img src="images/branding/branding_02.jpeg" alt="Locals Diner loyalty punch card - earn $10 off after 8 visits" loading="lazy" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <img src="images/branding/branding_02.jpeg" alt="Locals Diner loyalty punch card - earn $10 off after 8 visits" loading="lazy">
                 </div>
-                <div class="loyalty-text" style="text-align: left;">
-                    <h3 style="font-size: 2rem; color: var(--dark-navy); margin-bottom: 1rem;">Earn Rewards with Every Visit!</h3>
-                    <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 1rem;">Join our loyalty program and get rewarded for being part of the Locals Diner family! Here's how it works:</p>
-                    <ul style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; margin-left: 1.5rem;">
-                        <li>Make a purchase of $10 or more to get your card punched</li>
-                        <li>Collect 8 punches to earn <strong>$10 off</strong> your next visit!</li>
+                <div class="loyalty-text">
+                    <h3>Earn Rewards with Every Visit!</h3>
+                    <p>Join our loyalty program and get rewarded for being part of the Locals Diner family! Here's how it works:</p>
+                    <ul>
+                        <li>Make a purchase of <strong>$10 or more</strong> to get your card punched</li>
+                        <li>Collect <strong>8 punches</strong> to earn <strong>$10 off</strong> your next visit!</li>
                         <li>It's our way of saying thank you for your loyalty</li>
                     </ul>
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">Ask your server about signing up today!</p>
+                    <p>Ask your server about signing up today!</p>
+                    <a href="rewards.html" class="hero-button" style="display:inline-block;margin-top:1rem;font-size:1rem;padding:0.75rem 1.5rem;">Learn More</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Snapshot -->
+    <section class="community-snapshot">
+        <div class="container">
+            <h2>Part of the Dracut Family</h2>
+            <div class="community-snapshot-grid">
+                <div class="community-snap-card">
+                    <img src="images/branding/friends.jpg" alt="Friends enjoying a meal at the counter" loading="lazy">
+                    <h3>Where Friends Gather</h3>
+                    <p>Every day, neighbors become friends over great food and warm conversation.</p>
+                </div>
+                <div class="community-snap-card">
+                    <img src="images/branding/scouts.jpg" alt="Girl Scouts selling cookies at Locals Diner" loading="lazy">
+                    <h3>Supporting Local Youth</h3>
+                    <p>We're proud to support local youth organizations and community events.</p>
+                </div>
+                <div class="community-snap-card">
+                    <img src="images/branding/ginger.jpg" alt="Gingerbread house decorating event" loading="lazy">
+                    <h3>Community Events</h3>
+                    <p>From gingerbread decorating to local fundraisers, we love bringing people together.</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:2rem;">
+                <a href="community.html" class="hero-button" style="display:inline-block;font-size:1rem;padding:0.75rem 1.5rem;">See Our Community →</a>
             </div>
         </div>
     </section>
@@ -516,6 +272,24 @@
         <div class="container">
             <div class="map-wrapper">
                 <h2>Find Us</h2>
+                <div class="find-us-info">
+                    <div class="find-us-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>1420 Lakeview Ave</strong><br>Dracut, MA 01826
+                        </div>
+                    </div>
+                    <div class="find-us-detail">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <a href="tel:9789570065" onclick="gtag('event', 'phone_click', {'event_category': 'contact', 'event_label': 'homepage_map'});">(978) 957-0065</a>
+                        </div>
+                    </div>
+                    <div class="find-us-detail">
+                        <i class="fas fa-parking"></i>
+                        <div>Plenty of free parking available</div>
+                    </div>
+                </div>
                 <div class="map-container" onclick="gtag('event', 'map_click', {'event_category': 'engagement', 'event_label': 'directions'});">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.5!2d-71.3208!3d42.6744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3a7b5e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2s1420%20Lakeview%20Ave%2C%20Dracut%2C%20MA%2001826!5e0!3m2!1sen!2sus!4v1234567890"
@@ -525,9 +299,6 @@
                         title="Google Maps showing Locals Diner at 1420 Lakeview Ave, Dracut MA">
                     </iframe>
                 </div>
-                <p style="text-align: center; margin-top: 2rem; font-size: 1.1rem; color: var(--medium-blue);">
-                    Conveniently located on Lakeview Ave with plenty of parking available for everyone.
-                </p>
             </div>
         </div>
     </section>
@@ -539,15 +310,28 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section footer-left">
+                    <h4>Visit Us</h4>
                     <p>1420 Lakeview Ave<br>Dracut, MA 01826</p>
                     <p><a href="tel:9789570065" aria-label="Call Locals Diner at (978) 957-0065" onclick="gtag('event', 'phone_click', {'event_category': 'contact', 'event_label': 'footer'});">(978) 957-0065</a></p>
+                    <p class="footer-hours"><strong>Wed - Sun:</strong> 7:30 AM - 2:00 PM<br><strong>Mon - Tue:</strong> Closed</p>
                 </div>
                 <div class="footer-section footer-center">
-                    <img src="images/branding/logo_alt2.png" alt="Locals Diner logo" loading="lazy">
+                    <img src="images/branding/Logo_alt.png" alt="Locals Diner circular badge logo" class="footer-logo" loading="lazy">
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section footer-right">
-                    <h4>Services</h4>
-                    <p>Dine-In<br>In-Store Pickup<br>Call Ahead<br>Online Ordering Coming Soon</p>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rewards.html">Rewards</a></li>
+                        <li><a href="hiring.html">Join the Team</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="contact.html">Find Us</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">

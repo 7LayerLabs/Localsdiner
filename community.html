@@ -40,358 +40,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <style>
-        .community-hero {
-            background: linear-gradient(135deg, var(--dark-navy) 0%, var(--medium-blue) 100%);
-            color: var(--cream);
-            text-align: center;
-            padding: 6rem 2rem 4rem;
-        }
-
-        .community-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-family: 'Anton', sans-serif;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .community-hero p {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .community-content {
-            padding: 4rem 0;
-        }
-
-        .community-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
-            align-items: center;
-        }
-
-        .community-section img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .community-text h2 {
-            font-size: 2.5rem;
-            color: var(--dark-navy);
-            margin-bottom: 1.5rem;
-            font-family: 'Anton', sans-serif;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        .community-text p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            color: var(--blue-gray);
-        }
-
-        .impact-section {
-            background-color: var(--light-blue);
-            padding: 4rem 0;
-        }
-
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .impact-card {
-            background-color: var(--cream);
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .impact-card h3 {
-            font-size: 1.8rem;
-            color: var(--dark-navy);
-            margin-bottom: 1rem;
-            font-family: 'Anton', sans-serif;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        .impact-card p {
-            line-height: 1.8;
-            color: var(--medium-blue);
-        }
-
-        /* Partners Section */
-        .partners-section {
-            padding: 4rem 0;
-            background-color: var(--cream);
-        }
-
-        .partners-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        .partner-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .partner-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-        }
-
-        .partner-card a {
-            text-decoration: none;
-            display: block;
-        }
-
-        .partner-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: contain;
-            padding: 0.5rem;
-            background-color: white;
-        }
-
-        .partner-card h3 {
-            font-size: 1.2rem;
-            color: var(--dark-navy);
-            padding: 1rem 1.5rem 1.5rem;
-            text-align: center;
-            font-family: 'Anton', sans-serif;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border-top: 2px solid var(--light-blue);
-        }
-
-        /* Community Board Section */
-        .community-board-section {
-            padding: 4rem 0;
-            background-color: var(--light-blue);
-        }
-
-        .board-form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: var(--dark-navy);
-            font-size: 1rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid var(--light-blue);
-            border-radius: 5px;
-            font-size: 1rem;
-            font-family: inherit;
-            box-sizing: border-box;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--medium-blue);
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            background-color: var(--medium-blue);
-            color: var(--cream);
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 100%;
-        }
-
-        .submit-btn:hover {
-            background-color: var(--dark-navy);
-        }
-
-        @media (max-width: 768px) {
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-
-            .board-form-container {
-                padding: 2rem;
-            }
-
-            .partners-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .community-section {
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-            }
-
-            /* Default order for text-first sections */
-            .community-text {
-                order: 1;
-            }
-
-            .community-image {
-                order: 2;
-            }
-
-            .community-hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-
-        /* Online Ordering Tab */
-        .online-ordering-tab {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: linear-gradient(135deg, var(--teal) 0%, #007A9A 100%);
-            padding: 0.7rem 1.5rem;
-            border-radius: 50px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 142, 179, 0.4);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            white-space: nowrap;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-
-        .online-ordering-tab a {
-            color: var(--cream);
-            text-decoration: none;
-            display: block;
-        }
-
-        .online-ordering-tab::before {
-            content: 'COMING SOON';
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%);
-            color: white;
-            font-size: 0.55rem;
-            padding: 3px 6px;
-            border-radius: 10px;
-            font-weight: bold;
-            animation: pulse 2s infinite;
-            z-index: 1;
-            box-shadow: 0 2px 8px rgba(255, 82, 82, 0.5);
-            letter-spacing: 0.5px;
-        }
-
-        .online-ordering-tab:hover {
-            background: linear-gradient(135deg, #00A5D1 0%, var(--teal) 100%);
-            transform: translateY(-50%) translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 142, 179, 0.5);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-
-        @media (max-width: 1200px) {
-            .online-ordering-tab {
-                display: none;
-            }
-        }
-
-        /* Facebook Icon */
-        .facebook-icon {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            transition: transform 0.3s ease;
-        }
-
-        .facebook-icon a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .facebook-icon img {
-            height: 45px;
-            width: auto;
-            transition: transform 0.3s ease, filter 0.3s ease;
-        }
-
-        .facebook-icon:hover img {
-            transform: scale(1.15);
-            filter: brightness(1.2);
-        }
-
-        @media (max-width: 1200px) {
-            .facebook-icon {
-                display: none;
-            }
-        }
-    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-to-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:1rem;background:var(--dark-navy);color:var(--cream);text-decoration:none;font-weight:bold;" onfocus="this.style.position='fixed';this.style.left='10px';this.style.top='10px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible';" onblur="this.style.position='absolute';this.style.left='-9999px';this.style.width='1px';this.style.height='1px';this.style.overflow='hidden';">Skip to main content</a>
 
-    <!-- Header (Banner + Navigation) -->
+    <!-- Header -->
     <nav class="navbar" aria-label="Main navigation">
         <div class="facebook-icon">
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
@@ -400,9 +53,10 @@
         </div>
         <div class="nav-container">
             <ul class="nav-left">
-                <li><a href="menu.html" aria-label="View our menu">Menu</a></li>
-                <li><a href="gallery.html" aria-label="Browse our photo gallery">Gallery</a></li>
-                <li><a href="about.html" aria-label="Learn about us">About Us</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="rewards.html">Rewards</a></li>
             </ul>
             <div class="banner-logo">
                 <a href="index.html" aria-label="Locals Diner home page">
@@ -410,14 +64,12 @@
                 </a>
             </div>
             <ul class="nav-right">
-                <li><a href="hiring.html" aria-label="View job openings">Join the Team</a></li>
-                <li><a href="contact.html" aria-label="Contact us">Contact</a></li>
-                <li><a href="community.html" aria-label="Our community involvement">Community</a></li>
+                <li><a href="hiring.html">Join the Team</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="contact.html">Find Us</a></li>
             </ul>
             <button class="menu-toggle" id="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
         <div class="online-ordering-tab">
@@ -427,9 +79,9 @@
 
     <main id="main-content">
     <!-- Hero -->
-    <section class="community-hero">
+    <section class="page-hero page-hero-with-image" style="background-image:url('images/branding/community.jpg');">
         <h1>Our Community</h1>
-        <p>More than a diner - we're a gathering place where neighbors become family</p>
+        <p>More than a diner — we're a gathering place where neighbors become family</p>
     </section>
 
     <!-- Community Content -->
@@ -441,7 +93,7 @@
                     <h2>Where Friends Gather</h2>
                     <p>At Locals Diner, we're proud to be a cornerstone of the Dracut community. Every day, we welcome neighbors, families, and friends who come together over great food and warm conversation.</p>
                     <p>From early morning regulars to weekend breakfast crowds, our dining room buzzes with the energy of a community that cares for one another. We're honored to be the place where friendships are formed, memories are made, and everyone feels at home.</p>
-                    <p>Being a local business means more than just serving meals - it means being part of the fabric of our town and supporting the people who make it special.</p>
+                    <p>Being a local business means more than just serving meals — it means being part of the fabric of our town and supporting the people who make it special.</p>
                 </div>
                 <div class="community-image">
                     <img src="images/branding/friends.jpg" alt="Friends enjoying a meal together at the Locals Diner counter" loading="lazy">
@@ -473,14 +125,56 @@
                     <img src="images/branding/scouts.jpg" alt="Girl Scouts selling cookies at Locals Diner in Dracut" loading="lazy">
                 </div>
             </div>
+
+            <!-- Part of Dracut -->
+            <div class="community-section">
+                <div class="community-image">
+                    <img src="images/branding/community.jpg" alt="Locals Diner community gathering" loading="lazy">
+                </div>
+                <div class="community-text">
+                    <h2>Part of Dracut</h2>
+                    <p>Dracut is more than just our address — it's our home. We're invested in the people, the businesses, and the traditions that make this town a great place to live and work.</p>
+                    <p>From sponsoring local events to partnering with nearby businesses, we're committed to strengthening the bonds that make our community special. We believe that when local businesses support each other, everyone wins.</p>
+                    <p>Come visit us and see why so many locals consider our diner their second home. Whether you're a lifelong Dracut resident or just passing through, there's always a seat waiting for you.</p>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Impact Stats -->
+    <section class="impact-section">
+        <div class="container">
+            <h2>Our Community Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-card-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Local Partnerships</h3>
+                    <p>We partner with Dracut businesses to cross-promote and support the local economy. When you shop local, everyone benefits.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-card-icon"><i class="fas fa-child"></i></div>
+                    <h3>Youth Programs</h3>
+                    <p>From hosting Girl Scout cookie sales to supporting local sports teams, we're committed to helping Dracut's kids thrive.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-card-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <h3>Community Events</h3>
+                    <p>We host and sponsor events throughout the year that bring our neighbors together and create lasting memories.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-card-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Giving Back</h3>
+                    <p>Supporting local charities and causes is part of who we are. We believe in lifting up the community that supports us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Community Partners -->
     <section class="partners-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; color: var(--dark-navy); margin-bottom: 1rem; font-family: 'Anton', sans-serif; letter-spacing: 1.5px; text-transform: uppercase;">People We Believe In</h2>
-            <p style="text-align: center; font-size: 1.2rem; color: var(--medium-blue); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">Supporting local businesses and organizations that make our community stronger</p>
+            <h2>People We Believe In</h2>
+            <p class="partners-intro">Supporting local businesses and organizations that make our community stronger</p>
 
             <div class="partners-grid">
                 <div class="partner-card">
@@ -514,25 +208,25 @@
     <!-- Community Board Submission -->
     <section class="community-board-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; color: var(--dark-navy); margin-bottom: 1rem; font-family: 'Anton', sans-serif; letter-spacing: 1.5px; text-transform: uppercase;">Join Our Community Board</h2>
-            <p style="text-align: center; font-size: 1.2rem; color: var(--medium-blue); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">Are you a local business or organization? We'd love to feature you on our community board!</p>
+            <h2 style="text-align:center;font-size:2.5rem;color:var(--dark-navy);margin-bottom:1rem;font-family:'Anton',sans-serif;letter-spacing:1.5px;text-transform:uppercase;">Join Our Community Board</h2>
+            <p style="text-align:center;font-size:1.2rem;color:var(--medium-blue);margin-bottom:3rem;max-width:700px;margin-left:auto;margin-right:auto;">Are you a local business or organization? We'd love to feature you on our community board!</p>
 
             <div class="board-form-container">
                 <form id="community-board-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="business-name">Business/Organization Name *</label>
+                            <label for="business-name">Business/Organization Name <span class="required">*</span></label>
                             <input type="text" id="business-name" name="business-name" required>
                         </div>
                         <div class="form-group">
-                            <label for="contact-name">Contact Name *</label>
+                            <label for="contact-name">Contact Name <span class="required">*</span></label>
                             <input type="text" id="contact-name" name="contact-name" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="board-email">Email *</label>
+                            <label for="board-email">Email <span class="required">*</span></label>
                             <input type="email" id="board-email" name="board-email" required>
                         </div>
                         <div class="form-group">
@@ -542,16 +236,16 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="website">Website or Social Media *</label>
+                        <label for="website">Website or Social Media <span class="required">*</span></label>
                         <input type="url" id="website" name="website" placeholder="https://" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="board-message">Tell us about your business/organization *</label>
+                        <label for="board-message">Tell us about your business/organization <span class="required">*</span></label>
                         <textarea id="board-message" name="board-message" required placeholder="What do you do? Why would you like to be featured on our community board?"></textarea>
                     </div>
 
-                    <button type="submit" class="submit-btn">Submit Your Information</button>
+                    <button type="submit" class="submit-btn" style="width:100%;">Submit Your Information</button>
                 </form>
             </div>
         </div>
@@ -564,15 +258,28 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section footer-left">
+                    <h4>Visit Us</h4>
                     <p>1420 Lakeview Ave<br>Dracut, MA 01826</p>
-                    <p><a href="tel:9789570065" aria-label="Call Locals Diner at (978) 957-0065" onclick="gtag('event', 'phone_click', {'event_category': 'contact', 'event_label': 'footer'});">(978) 957-0065</a></p>
+                    <p><a href="tel:9789570065" aria-label="Call Locals Diner at (978) 957-0065">(978) 957-0065</a></p>
+                    <p class="footer-hours"><strong>Wed - Sun:</strong> 7:30 AM - 2:00 PM<br><strong>Mon - Tue:</strong> Closed</p>
                 </div>
                 <div class="footer-section footer-center">
-                    <img src="images/branding/logo_alt2.png" alt="Locals Diner logo" loading="lazy">
+                    <img src="images/branding/Logo_alt.png" alt="Locals Diner circular badge logo" class="footer-logo" loading="lazy">
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section footer-right">
-                    <h4>Services</h4>
-                    <p>Dine-In<br>In-Store Pickup<br>Call Ahead<br>Online Ordering Coming Soon</p>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rewards.html">Rewards</a></li>
+                        <li><a href="hiring.html">Join the Team</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="contact.html">Find Us</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -587,11 +294,9 @@
     <script type="module">
         import { init, tx, id } from 'https://cdn.jsdelivr.net/npm/@instantdb/core/dist/module/index.js';
 
-        // Initialize InstantDB
         const APP_ID = 'a00de4bc-52f7-47e6-992c-c2e4c7c95899';
         const db = init({ appId: APP_ID });
 
-        // Community Board Form submission handler
         document.getElementById('community-board-form').addEventListener('submit', async function(e) {
             e.preventDefault();
 
@@ -600,7 +305,6 @@
             submitBtn.textContent = 'Submitting...';
 
             try {
-                // Collect form data
                 const formData = {
                     businessName: document.getElementById('business-name').value,
                     contactName: document.getElementById('contact-name').value,
@@ -608,33 +312,27 @@
                     phone: document.getElementById('board-phone').value || '',
                     website: document.getElementById('website').value,
                     message: document.getElementById('board-message').value,
-                    logoUrl: '', // Will be added manually by Locals Diner team
+                    logoUrl: '',
                     submittedAt: Date.now(),
                     status: 'pending',
                     featured: false
                 };
 
-                console.log('Community Board Form submission:', formData);
-
-                // Save to InstantDB
                 await db.transact([
                     tx.communityBoard[id()].update(formData)
                 ]);
 
-                // Success
                 alert('Thank you for your submission! We will review your information and get back to you soon.');
                 this.reset();
 
             } catch (error) {
                 console.error('Submission error:', error);
-
                 if (error.message.includes('APP_ID')) {
                     alert('Database configuration needed. Please contact the site administrator.');
                 } else {
                     alert('Error: ' + error.message + '\n\nPlease try again or contact us directly at (978) 957-0065.');
                 }
             } finally {
-                // Re-enable submit button
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Submit Your Information';
             }
