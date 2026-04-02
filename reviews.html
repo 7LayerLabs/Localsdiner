@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave a Review - Locals Diner | Dracut MA</title>
+    <meta name="description" content="Love your meal at Locals Diner? Leave us a review on Google, Facebook, or Yelp and help new guests discover us!">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-navy: #0D1321;
+            --blue-gray: #1D2D44;
+            --medium-blue: #3E5C76;
+            --light-blue: #748CAB;
+            --cream: #F0EBD8;
+            --teal: #008EB3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--dark-navy);
+            background-color: var(--cream);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .review-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(13, 19, 33, 0.15);
+            max-width: 480px;
+            width: 100%;
+            padding: 48px 36px;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 180px;
+            margin-bottom: 24px;
+        }
+
+        .review-card h1 {
+            font-family: 'Anton', sans-serif;
+            font-size: 1.6rem;
+            color: var(--dark-navy);
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+
+        .review-card p {
+            font-size: 1rem;
+            color: var(--blue-gray);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .review-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .review-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: 'Georgia', serif;
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: white;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .review-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .review-btn i {
+            font-size: 1.4rem;
+        }
+
+        .btn-google {
+            background: #4285F4;
+        }
+
+        .btn-facebook {
+            background: #1877F2;
+        }
+
+        .btn-yelp {
+            background: #D32323;
+        }
+
+        .thank-you {
+            margin-top: 28px;
+            font-size: 0.9rem;
+            color: var(--light-blue);
+        }
+
+        .heart {
+            color: var(--teal);
+        }
+    </style>
+</head>
+<body>
+    <div class="review-card">
+        <img src="images/branding/Logo_alt.png" alt="Locals Diner Logo" class="logo">
+
+        <h1>LOVE YOUR MEAL TODAY?</h1>
+
+        <p>Help our small business grow by sharing your experience. Your review helps new guests discover us and keeps the community we love going strong.</p>
+
+        <div class="review-buttons">
+            <!-- REPLACE these URLs with the actual review links -->
+            <a href="https://www.google.com/search?sca_esv=dba3b81a402183e1&sxsrf=ANbL-n4P0HMuKCAi9BiJOyI-syPZt3-qeQ:1775165779494&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOY2H0KP3SjoZvnAkz-s8zMga6OKhKMsKncTKSnk3juJEebH7J4cqlJIFqd331CUyQDaoq6g7eSEJhcJkhJBGrT7ucX93&q=Locals+Diner+Reviews&sa=X&ved=2ahUKEwj-3tDtj9CTAxWyD1kFHX52Ck0Q0bkNegQILhAH&biw=1920&bih=911&dpr=1#lrd=0x89e3a50011e6ba0b:0xb4cc133344144928,3,,,," target="_blank" rel="noopener noreferrer" class="review-btn btn-google">
+                <i class="fab fa-google"></i>
+                Review on Google
+            </a>
+
+            <a href="https://www.facebook.com/profile.php?id=100065120043993&sk=reviews" target="_blank" rel="noopener noreferrer" class="review-btn btn-facebook">
+                <i class="fab fa-facebook-f"></i>
+                Review on Facebook
+            </a>
+
+            <a href="https://www.yelp.com/writeareview/biz/ykdU0bxvTZUByXuFhHGW3g?return_url=%2Fbiz%2FykdU0bxvTZUByXuFhHGW3g&review_origin=biz-details-war-button" target="_blank" rel="noopener noreferrer" class="review-btn btn-yelp">
+                <i class="fab fa-yelp"></i>
+                Review on Yelp
+            </a>
+        </div>
+
+        <p class="thank-you">Thank you for your support — we truly appreciate you <span class="heart"><i class="fas fa-heart"></i></span></p>
+    </div>
+</body>
+</html>
